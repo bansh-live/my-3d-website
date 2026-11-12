@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BANSH — Frontend & WordPress Developer Portfolio</title>
+  <meta name="description"
+    content="Alex Morgan is a full-stack / frontend developer building scalable, modern and interactive digital experiences.">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23080808'/%3E%3Ctext x='16' y='22' font-size='15' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23fff'%3EAM%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind (CDN) is loaded for utility support; the design system itself lives in the CSS below. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+
+  </style>
+</head>
+
+<body class="is-loading">
+
+  <!-- Portrait artwork (transparent-background cut-out placeholder).
+     Replace by setting CONFIG.profileImage to a transparent PNG (e.g. images/profile.png). -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="gSkin" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#e6e4df" />
+        <stop offset="1" stop-color="#b7b4ad" />
+      </linearGradient>
+      <linearGradient id="gHood" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#2a2a2a" />
+        <stop offset="1" stop-color="#090909" />
+      </linearGradient>
+    </defs>
+    <symbol id="portrait-art" viewBox="0 0 600 800">
+      <path d="M6 800C16 650 110 590 215 565L385 565C490 590 584 650 594 800Z" fill="url(#gHood)" />
+      <path
+        d="M205 560C215 622 250 654 300 659C350 654 385 622 395 560C370 586 335 597 300 597C265 597 230 586 205 560Z"
+        fill="#050505" />
+      <path d="M250 430L250 562C265 592 335 592 350 562L350 430Z" fill="#b3b0a9" />
+      <path d="M250 468C280 522 320 522 350 468L350 440L250 440Z" fill="#9b9891" opacity=".7" />
+      <ellipse cx="184" cy="338" rx="16" ry="30" fill="#c9c6bf" />
+      <ellipse cx="416" cy="338" rx="16" ry="30" fill="#aaa7a0" />
+      <path
+        d="M300 160C225 160 185 225 185 315C185 400 235 470 300 470C365 470 415 400 415 315C415 225 375 160 300 160Z"
+        fill="url(#gSkin)" />
+      <path
+        d="M180 322C163 208 215 128 305 126C397 126 442 196 420 322C410 276 395 236 370 216C330 238 255 238 225 206C200 236 186 276 180 322Z"
+        fill="#0f0f0f" />
+      <rect x="210" y="300" width="80" height="58" rx="24" fill="none" stroke="#111" stroke-width="6" />
+      <rect x="310" y="300" width="80" height="58" rx="24" fill="none" stroke="#111" stroke-width="6" />
+      <path d="M290 322H310M210 318L188 312M390 318L412 312" stroke="#111" stroke-width="6" stroke-linecap="round"
+        fill="none" />
+      <circle cx="250" cy="330" r="5.5" fill="#111" />
+      <circle cx="350" cy="330" r="5.5" fill="#111" />
+      <path d="M222 282C236 274 256 274 272 281M328 281C344 274 364 274 378 282" stroke="#161616" stroke-width="6"
+        stroke-linecap="round" fill="none" />
+      <path d="M300 342C293 374 291 390 305 394" stroke="#97938c" stroke-width="4" stroke-linecap="round" fill="none" />
+      <path d="M266 422C290 442 312 442 336 422" stroke="#333" stroke-width="5" stroke-linecap="round" fill="none" />
+      <path d="M272 604L262 712M328 604L338 712" stroke="#FF4B16" stroke-width="7" stroke-linecap="round" />
+      <text x="300" y="768" fill="#FF4B16" font-family="Space Grotesk, Arial, sans-serif" font-weight="700"
+        font-size="38" text-anchor="middle">&lt;/&gt;</text>
+    </symbol>
+  </svg>
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader" role="status" aria-label="Loading">
+    <div class="pl-top pl-detail"><span><i class="pl-dot"></i>Portfolio — BANSH</span><span>WordPress / Frontend</span>
+    </div>
+    <div class="pl-center">
+      <div class="pl-logo">
+        <svg class="ring" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="48" stroke="rgba(255,255,255,.25)" stroke-width=".6" stroke-dasharray="1.5 3.5" />
+          <circle cx="50" cy="3" r="2" fill="#FF4B16" />
+        </svg>
+        <svg class="ring r2" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="48" stroke="#fff" stroke-width=".6" stroke-dasharray="30 12" />
+        </svg>
+        <b>B<i>K</i></b>
+      </div>
+      <div class="pl-text" id="plText" aria-hidden="true"></div>
+    </div>
+    <div class="pl-bottom">
+      <div class="pl-count"><span id="plNum">0</span><small>%</small></div>
+      <div class="pl-bar"><i id="plBar"></i></div>
+      <span class="pl-detail">Experience in AI tools</span>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="brand" aria-label="Alex Morgan — home">
+        <span class="mono">B<i>K</i></span>
+        <span class="name">BANSH</span>
+      </a>
+      <ul class="nav-socials" aria-label="Social links">
+        <li><a class="icon-btn" data-social="github" href="https://https://github.com/bansh-live"
+            rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a></li>
+        <li><a class="icon-btn" data-social="linkedin"
+            href="https://https://www.linkedin.com/in/bansh-choudhary-53068441b/" rel="noopener noreferrer"
+            aria-label="LinkedIn"><i data-lucide="linkedin"></i></a></li>
+        <li><a class="icon-btn" data-social="instagram" href="https://www.instagram.com/" target="_blank"
+            rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a></li>
+        <li><a class="icon-btn" data-social="twitter" href="https://twitter.com/" target="_blank"
+            rel="noopener noreferrer" aria-label="Twitter / X"><i data-lucide="twitter"></i></a></li>
+        <li><a class="icon-btn" data-email href="mailto:banshthakur113@gmail.com" aria-label="Email"><i
+              data-lucide="mail"></i></a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-resume" type="button" data-resume data-magnetic><i
+            data-lucide="download"></i><span>Resume</span></button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="menu"><i class="i-open" data-lucide="menu"></i><i class="i-close" data-lucide="x"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-screen menu -->
+  <nav id="menu" aria-label="Main menu">
+    <ul>
+      <li><a href="#home"><small>01</small>Home</a></li>
+      <li><a href="#about"><small>02</small>About</a></li>
+      <li><a href="#services"><small>03</small>Services</a></li>
+      <li><a href="#projects"><small>04</small>Projects</a></li>
+      <li><a href="#contact"><small>05</small>Contact</a></li>
+    </ul>
+    <div class="menu-foot">
+      <a data-email href="mailto:banshthakur113@gmail.com">banshthakur113@gmail.com</a>
+      <div class="row">
+        <a class="icon-btn" data-social="github" href="github.com/bansh-live" rel="noopener noreferrer"
+          aria-label="GitHub"><i data-lucide="github"></i></a>
+        <a class="icon-btn" data-social="linkedin" href="https://www.linkedin.com/in/bansh-choudhary-53068441b/"
+          rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        <a class="icon-btn" data-social="instagram" href="https://www.instagram.com/" ` rel="noopener noreferrer"
+          aria-label="Instagram"><i data-lucide="instagram"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home" data-theme="light" aria-label="Introduction">
+      <div class="hero-title-wrap" data-hero-parallax="-70">
+        <h1 class="hero-title display" data-fit data-chars>DEVELOPER</h1>
+      </div>
+
+      <div class="hero-portrait" data-hero-parallax="50">
+        <div class="hero-portrait-in" data-portrait-wrap>
+          <img class="portrait" src="images/Beige Jacket Portrait Cutout-Photoroom.png"
+            alt="BANSH - Creative Developer" />
+        </div>
+      </div>
+
+      <div class="hero-left hc" data-hero-parallax="-30">
+        <div class="hc-in">
+          <p class="hero-hello">Hello, I'm</p>
+          <p class="hero-name">BANSH</p>
+          <span class="hero-role">WordPress / Frontend Developer</span>
+          <p>I design and build fast, accessible and expressive web products — from pixel-perfect interfaces to the APIs
+            that power them.</p>
+          <div class="hero-loc"><i data-lucide="map-pin"></i><span data-loc>HP/India — Open to remote</span>
+          </div>
+          <div class="chips"><span class="chip">Html5</span><span class="chip">CSS3</span><span
+              class="chip">Boostrap</span><span class="chip">JavaScript</span><span class="chip">WordPress</span></div>
+        </div>
+      </div>
+
+      <div class="hero-stats" data-hero-parallax="-45">
+        <div class="hc">
+          <div class="hc-in"><span class="num" data-count="3" data-suffix="+" data-pad="2">03+</span><span
+              class="lbl">Featured Projects</span></div>
+        </div>
+        <div class="hc">
+          <div class="hc-in"><span class="num" data-count="5" data-suffix="+" data-pad="2">05+</span><span
+              class="lbl">Core Technologies</span></div>
+        </div>
+        <div class="hc">
+          <div class="hc-in"><span class="num">2026</span><span class="lbl">Deploma — Pixxelu Digital Company</span>
+          </div>
+        </div>
+        <div class="hc">
+          <div class="hc-in"><span class="num" data-count="12" data-suffix="+">12+</span><span class="lbl">Websites
+              Shipped</span></div>
+        </div>
+      </div>
+
+      <!-- decorative floating elements (desktop) -->
+      <span class="hero-decor d1" aria-hidden="true"></span>
+      <span class="hero-decor d2" aria-hidden="true"><i data-lucide="asterisk"></i></span>
+      <span class="hero-decor d3" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs>
+            <path id="circ" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0" />
+          </defs><text font-family="Space Grotesk, sans-serif" font-size="11.5" font-weight="500" letter-spacing="3.2"
+            fill="#080808">
+            <textPath href="#circ">AVAILABLE FOR WORK • 2026 • FREELANCE •</textPath>
+          </text>
+        </svg>
+        <span class="core"><i data-lucide="arrow-up-right"></i></span>
+      </span>
+      <span class="hero-decor d4" aria-hidden="true"></span>
+
+      <div class="scroll-hint" aria-hidden="true"> <i data-lucide="arrow-up"
+          style="transform:rotate(180deg);width:14px;height:14px"></i></div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about" data-theme="light">
+      <div class="container about-grid">
+        <div class="about-visual" data-fade>
+          <span class="ghost display" aria-hidden="true">About</span>
+          <div data-portrait-wrap style="position:absolute;inset:0">
+            <svg class="portrait" viewBox="0 0 600 800" role="img"
+              aria-label="Cropped portrait of Alex Morgan (placeholder)">
+              <use href="#portrait-art" />
+            </svg>
+          </div>
+          <span class="about-tag"><i></i>Available for work</span>
+        </div>
+
+        <div class="about-text">
+          <div class="eyebrow" data-fade>( 01 ) Introduction</div>
+          <h2 class="about-statement display" data-words>I build <span class="hl">scalable</span>, modern and <span
+              class="hl">interactive</span> digital experiences.</h2>
+          <p class="about-lead" data-fade>I'm BANSH, a Frontend & WordPress developer who cares as much about the
+            details of a
+            hover state as the shape of a database schema. I turn ideas into production-ready products — responsive,
+            accessible, fast and a pleasure to use.</p>
+
+          <div class="about-info" data-stagger>
+            <div>
+              <h3>Skills</h3>
+              <ul>
+                <li>Frontend <span>React · Html5 · CSS3</span></li>
+                <li>Backend <span>WordPress· JavaScript</span></li>
+                <li>Creative <span>Three.js .</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Experience</h3>
+              <ul>
+                <li>Industrial Traning <span>2024 — 2025</span></li>
+                <li>Pixxelu Digital Technologies <span>2025 - 2026</span></li>
+                <li>WordPress Intern <span> Sep 2026 — Nov 2026</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Education</h3>
+              <ul>
+                <li>Web Developer <span>2025 — 2027</span></li>
+                <li>Internship in Wordpress Developer & SEO <span>2026</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Goals</h3>
+              <p>To join a product-minded team building ambitious web platforms, grow into a technical lead, and keep
+                shipping interfaces that feel as good as they look.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="services" id="services" data-theme="dark">
+      <div class="container">
+        <div class="services-head">
+          <div class="eyebrow" data-fade>( 02 ) What I do</div>
+          <h2 class="services-title display" data-words aria-label="Services — Services"><span>Services</span><span
+              class="dash">—</span><span class="outline">Services</span></h2>
+        </div>
+
+        <div class="svc-list" id="svcList">
+          <article class="svc" style="--i:0">
+            <div class="svc-body">
+              <div>
+                <div class="svc-num">01</div>
+                <h3 class="display">Frontend Development</h3>
+                <p>Pixel-perfect, accessible interfaces with fluid motion. Design systems, landing pages and web apps
+                  that load fast and feel alive.</p>
+              </div>
+              <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span
+                  class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Boostrap</span><span
+                  class="tag">GSAP</span></div>
+            </div>
+            <div class="svc-media" data-tilt><span class="svc-badge"><i data-lucide="arrow-up-right"></i></span>
+              <div class="zoom"><img src="https://images.pexels.com/photos/34140/pexels-photo.jpg"
+                  alt="Abstract 3D blocks and a sphere representing frontend craft" loading="lazy" decoding="async"
+                  onerror="this.style.opacity=0"></div>
+            </div>
+          </article>
+
+          <article class="svc" style="--i:1">
+            <div class="svc-body">
+              <div>
+                <div class="svc-num">02</div>
+                <h3 class="display">WordPress Development</h3>
+                <p>Custom WordPress websites built for performance, flexibility, and growth. From business websites to
+                  WooCommerce stores, I turn ideas into seamless digital experiences.</p>
+              </div>
+              <div class="tags"><span class="tag">Customise Theme & Plugin</span><span class="tag">Elementor</span><span
+                  class="tag">E-Commerce</span><span class="tag">Custom Code</span><span class="tag">Mantaince</span>
+              </div>
+            </div>
+            <div class="svc-media" data-tilt><span class="svc-badge"><i data-lucide="arrow-up-right"></i></span>
+              <div class="zoom"><img src="https://images.pexels.com/photos/30690786/pexels-photo-30690786.jpeg"
+                  alt="Glowing digital circuitry representing backend systems" loading="lazy" decoding="async"
+                  onerror="this.style.opacity=0"></div>
+            </div>
+          </article>
+
+          <article class="svc" style="--i:2">
+            <div class="svc-body">
+              <div>
+                <div class="svc-num">03</div>
+                <h3 class="display">AI / Generative AI</h3>
+                <p>Practical AI features inside real products — chat assistants, retrieval-augmented search and smart
+                  automation using modern LLM APIs.</p>
+              </div>
+              <div class="tags"><span class="tag">APIs</span><span class="tag">Claude</span><span class="tag">Prompt
+                  Design</span><span class="tag">Clean Work</span><span class="tag">Other AI tools</span></div>
+            </div>
+            <div class="svc-media" data-tilt><span class="svc-badge"><i data-lucide="arrow-up-right"></i></span>
+              <div class="zoom"><img src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg"
+                  alt="Abstract warm glowing 3D sculpture representing generative AI" loading="lazy" decoding="async"
+                  onerror="this.style.opacity=0"></div>
+            </div>
+          </article>
+
+          <article class="svc" style="--i:3">
+            <div class="svc-body">
+              <div>
+                <div class="svc-num">04</div>
+                <h3 class="display">Website Mantaince</h3>
+                <p>Keep your website secure, fast and up to date. From fixing bugs
+                  and improving performance to regular backups and content updates,
+                  I make sure your website runs smoothly.</p>
+              </div>
+              <div class="tags"><span class="tag">Bug Fixing</span><span class="tag">Speed Optimization</span><span
+                  class="tag">WordPress Updates</span><span class="tag">Security</span><span class="tag">Backups</span>
+              </div>
+            </div>
+            <div class="svc-media" data-tilt><span class="svc-badge"><i data-lucide="arrow-up-right"></i></span>
+              <div class="zoom"><img src="https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg"
+                  alt="Futuristic geometric 3D render representing cloud infrastructure" loading="lazy" decoding="async"
+                  onerror="this.style.opacity=0"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="projects" id="projects" data-theme="light">
+      <div class="container">
+        <div class="eyebrow" data-fade>( 03 ) Selected work</div>
+        <h2 class="projects-title display" data-words>Projects that move from idea to <span class="hl">product.</span>
+        </h2>
+
+        <!-- PROJECT 01 -->
+        <article class="proj">
+          <div class="proj-media">
+            <div class="browser" data-tilt-soft>
+              <div class="browser-bar"><i></i><i></i><i></i><span>shop.example.com</span></div>
+              <div class="browser-view" data-reveal-clip>
+                <div class="zoom"><img src="https://images.pexels.com/photos/6207736/pexels-photo-6207736.jpeg"
+                    alt="E-commerce checkout interface on a laptop screen" loading="lazy" decoding="async" data-parallax
+                    onerror="this.style.opacity=0"></div>
+              </div>
+            </div>
+          </div>
+          <div class="proj-info" data-stagger>
+            <div class="proj-kicker">Project 01 <span>/ E-commerce</span></div>
+            <h3 class="display">Modern E-Commerce Platform</h3>
+            <p>A store with product search, cart, secure checkout and an admin dashboard — engineered for
+              speed, conversion and clean inventory management.</p>
+            <div class="tags"><span class="tag">Html5</span><span class="tag">CSS3</span><span
+                class="tag">JavaScript</span><span class="tag">Boostrap</span></div>
+            <dl class="proj-facts">
+              <div>
+                <dt>Role</dt>
+                <dd>Frontend Developer</dd>
+              </div>
+              <div>
+                <dt>Year</dt>
+                <dd>2026</dd>
+              </div>
+              <div>
+                <dt>Type</dt>
+                <dd>E-commerce Store</dd>
+              </div>
+            </dl>
+            <div class="proj-actions">
+              <a class="btn btn-dark" href="https://fasion-five.vercel.app/#/" rel="noopener noreferrer"
+                data-magnetic>Live Preview <i data-lucide="arrow-up-right"></i></a>
+              <a class="btn" href="https://github.com/bansh-live" rel="noopener noreferrer" data-magnetic><i
+                  data-lucide="github"></i> GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02 -->
+        <article class="proj rev">
+          <div class="proj-media">
+            <div class="browser" data-tilt-soft>
+              <div class="browser-bar"><i></i><i></i><i></i><span>studio.example.com</span></div>
+              <div class="browser-view" data-reveal-clip>
+                <div class="zoom"><img src="https://images.pexels.com/photos/6476808/pexels-photo-6476808.jpeg"
+                    alt="Minimal workspace with a laptop showing a creative business website" loading="lazy"
+                    decoding="async" data-parallax onerror="this.style.opacity=0"></div>
+              </div>
+            </div>
+          </div>
+          <div class="proj-info" data-stagger>
+            <div class="proj-kicker">Project 02 <span>/ Brand site</span></div>
+            <h3 class="display">Creative Business Website</h3>
+            <p>An editorial, animation-led website for a design studio: cinematic page transitions, scroll storytelling
+              and a lightweight CMS so the team can publish alone.</p>
+            <div class="tags"><span class="tag">HTML5</span><span class="tag">GSAP</span><span class="tag">JavaScript
+              </span><span class="tag">CSS3</span></div>
+            <dl class="proj-facts">
+              <div>
+                <dt>Role</dt>
+                <dd>Frontend</dd>
+              </div>
+              <div>
+                <dt>Year</dt>
+                <dd>2026</dd>
+              </div>
+              <div>
+                <dt>Type</dt>
+                <dd>Marketing</dd>
+              </div>
+            </dl>
+            <div class="proj-actions">
+              <a class="btn btn-dark" href="https://billo-rosy.vercel.app/" rel="noopener noreferrer" data-magnetic>Live
+                Preview <i data-lucide="arrow-up-right"></i></a>
+              <a class="btn" href="https://github.com/bansh-live" rel="noopener noreferrer" data-magnetic><i
+                  data-lucide="github"></i> GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03 -->
+        <article class="proj">
+          <div class="proj-media">
+            <div class="browser" data-tilt-soft>
+              <div class="browser-bar"><i></i><i></i><i></i><span>app.example.com</span></div>
+              <div class="browser-view" data-reveal-clip>
+                <div class="zoom"><img
+                    src="https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg"
+                    alt="Person using an interactive web application on a laptop" loading="lazy" decoding="async"
+                    data-parallax onerror="this.style.opacity=0"></div>
+              </div>
+            </div>
+          </div>
+          <div class="proj-info" data-stagger>
+            <div class="proj-kicker">Project 03 <span>/ Resturant</span></div>
+            <h3 class="display">Resturant Website </h3>
+            <p>A modern restaurant website designed to showcase delicious food,
+              explore the menu and create an engaging dining experience.
+              Featuring elegant visuals, responsive layouts and smooth animations
+              across all devices.</p>
+            <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span
+                class="tag">JavaScript</span><span class="tag">API</span></div>
+            <dl class="proj-facts">
+              <div>
+                <dt>Role</dt>
+                <dd>Developer</dd>
+              </div>
+              <div>
+                <dt>Year</dt>
+                <dd>2026</dd>
+              </div>
+              <div>
+                <dt>Type</dt>
+                <dd>SaaS</dd>
+              </div>
+            </dl>
+            <div class="proj-actions">
+              <a class="btn btn-dark" href="https://ember-flame-kappa.vercel.app/" rel="noopener noreferrer"
+                data-magnetic>Live Preview <i data-lucide="arrow-up-right"></i></a>
+              <a class="btn" href="https://github.com/bansh-live" rel="noopener noreferrer" data-magnetic><i
+                  data-lucide="github"></i> GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== TOOLS ===================== -->
+    <section class="tools" id="tools" data-theme="light">
+      <div class="container tools-head">
+        <div>
+          <div class="eyebrow" data-fade>( 04 ) Stack</div>
+          <h2 class="tools-title display" data-words>Tools I build with.</h2>
+        </div>
+        <p class="tools-note" data-fade>Reliable, modern technologies chosen for the job — not for the hype. Hover to
+          pause.</p>
+      </div>
+      <div class="marquee"
+        aria-label="Technologies: HTML5, CSS3, JavaScript, Bootstrap, React, Next.js, Node.js, Express, MongoDB, WordPress, GSAP, Three.js">
+        <div class="marquee-track" data-marquee="1"></div>
+      </div>
+      <div class="marquee rev" aria-hidden="true">
+        <div class="marquee-track" data-marquee="-1"></div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact on-dark" id="contact" data-theme="dark">
+      <div id="contactCanvas" aria-hidden="true"></div>
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <div class="eyebrow" data-fade>( 05 ) Contact</div>
+          <h2 class="contact-title display" data-words>Let's create something <span class="hl">great.</span></h2>
+          <ul class="contact-list" data-stagger>
+            <li><span class="k">Email</span><a data-email href="mailto:banshthakur113@gmail.com"><span
+                  data-email-text>banshthakur113@gmail.com</span></a></li>
+            <li><span class="k">LinkedIn</span><a data-social="linkedin" href="https://www.linkedin.com/in/bansh-choudhary-53068441b/"
+               rel="noopener noreferrer">/in/alexmorgan <i data-lucide="arrow-up-right"></i></a></li>
+            <li><span class="k">GitHub</span><a data-social="github" href="https://github.com/bansh-live" 
+                rel="noopener noreferrer">@BANSH<i data-lucide="arrow-up-right"></i></a></li>
+            <li><span class="k">Location</span><span data-loc2>HP, India</span></li>
+            <li><span class="k">Status</span><span class="status"><i></i>Available for freelance &amp; full-time</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-card" id="formCard">
+          <h3>Start a conversation</h3>
+          <p class="sub">Tell me about your project — I usually reply within 24 hours.</p>
+          <form id="contactForm" novalidate>
+            <div class="field"><label for="cf-name">Full Name</label><input id="cf-name" name="name" type="text"
+                autocomplete="name" required minlength="2" placeholder="Bansh Kumar"><span class="err"
+                id="cf-name-err"></span></div>
+            <div class="field"><label for="cf-email">Email Address</label><input id="cf-email" name="email" type="email"
+                autocomplete="email" required placeholder="bansh@company.com"><span class="err" id="cf-email-err"></span>
+            </div>
+            <div class="field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" required
+                minlength="10" placeholder="Tell me about your idea, timeline and budget…"></textarea><span class="err"
+                id="cf-msg-err"></span></div>
+            <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-foot">
+              <button class="btn btn-orange" type="submit" id="cfSubmit" data-magnetic><span>Send message</span><i
+                  data-lucide="send"></i></button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer" data-theme="dark">
+    <div class="container">
+      <div class="footer-top">
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a
+            href="#projects">Projects</a><a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-right">
+          <div class="row">
+            <a class="icon-btn" data-social="github" href="https://github.com/bansh-live"
+              rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+            <a class="icon-btn" data-social="linkedin" href="https://www.linkedin.com/in/bansh-choudhary-53068441b/"
+              rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a class="icon-btn" data-social="instagram" href="https://www.instagram.com/"
+              rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+          <button class="to-top" id="toTop" type="button" aria-label="Back to top" data-magnetic><i
+              data-lucide="arrow-up"></i></button>
+        </div>
+      </div>
+      <div class="footer-name-wrap">
+        <h2 class="footer-name display" data-fit data-chars data-fit-footer>BANSH</h2>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> BANSH. All rights
+          reserved.</span><span>Designed &amp; built with care — GSAP · Lenis · Three.js</span></div>
+    </div>
+  </footer>
+
+  <div class="cursor-dot" id="cDot"></div>
+  <div class="cursor-ring" id="cRing"></div>
+
+  <!-- ===================== LIBRARIES ===================== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+  <!-- =========================================================
+     main.js — config, helpers, smooth scroll, preloader, boot
+     ========================================================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---- EASY CUSTOMISATION ---- */
+      const CONFIG = {
+        name: 'BANSH',
+        email: 'banshthakur113@gmail.com',
+        location: 'HP, India',
+        profileImage: '',            // e.g. 'images/profile.png' (transparent PNG cut-out). Empty = built-in placeholder.
+        resumeUrl: '',               // e.g. 'files/resume.pdf'. Empty = a plain-text resume is generated on click.
+        formEndpoint: '',            // e.g. 'https://formspree.io/f/xxxxxxx'. Empty = opens the visitor's email app (mailto).
+        socials: {
+          github: 'https://github.com/bansh-live',
+          linkedin: 'https://www.linkedin.com/in/bansh-choudhary-53068441b/',
+          instagram: 'https://www.instagram.com/',
+          twitter: 'https://twitter.com/'
+        },
+        marqueeTools: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'React', 'Next.js', 'Node.js', 'Express', 'MongoDB', 'WordPress', 'GSAP', 'Three.js']
+      };
+
+      const $ = (s, c = document) => c.querySelector(s);
+      const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const hasGSAP = !!(window.gsap && window.ScrollTrigger);
+      const PF = window.PF = {CONFIG, $, $$, reduce, hasGSAP, lenis: null};
+
+      /* ---- apply config to the DOM ---- */
+      function applyConfig() {
+        $$('[data-social]').forEach(a => {const u = CONFIG.socials[a.dataset.social]; if (u) a.href = u;});
+        $$('[data-email]').forEach(a => a.href = 'mailto:' + CONFIG.email);
+        $$('[data-email-text]').forEach(s => s.textContent = CONFIG.email);
+        $$('[data-loc2]').forEach(s => s.textContent = CONFIG.location);
+        if (CONFIG.profileImage) {
+          $$('.portrait').forEach(svg => {
+            const img = new Image();
+            img.className = 'portrait'; img.src = CONFIG.profileImage; img.alt = 'Portrait of ' + CONFIG.name;
+            img.decoding = 'async'; svg.replaceWith(img);
+          });
+        }
+        const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
+      }
+
+      /* ---- text splitting ---- */
+      function splitChars(el) {
+        const text = el.textContent.trim();
+        el.setAttribute('aria-label', text);
+        el.textContent = '';
+        [...text].forEach(c => {
+          const o = document.createElement('span'); o.className = 'ch'; o.setAttribute('aria-hidden', 'true');
+          const i = document.createElement('span'); i.className = 'chi'; i.textContent = c === ' ' ? '\u00A0' : c;
+          o.appendChild(i); el.appendChild(o);
+        });
+      }
+      function splitWords(el) {
+        const walk = node => {
+          [...node.childNodes].forEach(n => {
+            if (n.nodeType === 3) {
+              const frag = document.createDocumentFragment();
+              n.textContent.split(/(\s+)/).forEach(part => {
+                if (!part) return;
+                if (/^\s+$/.test(part)) {frag.appendChild(document.createTextNode(' ')); return;}
+                const w = document.createElement('span'); w.className = 'w';
+                const wi = document.createElement('span'); wi.className = 'wi'; wi.textContent = part;
+                w.appendChild(wi); frag.appendChild(w);
+              });
+              n.replaceWith(frag);
+            } else if (n.nodeType === 1) {walk(n);}
+          });
+        };
+        walk(el);
+      }
+      PF.splitWords = splitWords;
+
+      /* ---- fit text to container width (hero title + footer name) ---- */
+      function fitText() {
+        $$('[data-fit]').forEach(el => {
+          const target = el.parentElement.clientWidth;
+          el.style.fontSize = '100px';
+          const w = el.getBoundingClientRect().width;
+          if (w && target) el.style.fontSize = (100 * target / w * 0.995) + 'px';
+        });
+      }
+
+      /* ---- build tool marquee ---- */
+      function buildMarquee() {
+        $$('[data-marquee]').forEach(track => {
+          const rev = track.dataset.marquee === '-1';
+          const list = rev ? [...CONFIG.marqueeTools].reverse() : CONFIG.marqueeTools;
+          const group = list.map(t => '<span class="m-item">' + t + '</span>').join('');
+          track.innerHTML = '<div class="marquee-group">' + group + '</div><div class="marquee-group" aria-hidden="true">' + group + '</div>';
+        });
+      }
+
+      /* ---- Lenis smooth scrolling (+ GSAP ticker sync) ---- */
+      function initLenis() {
+        if (reduce || !window.Lenis) return;
+        const lenis = PF.lenis = new Lenis({duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true});
+        if (hasGSAP) {
+          lenis.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add(t => lenis.raf(t * 1000));
+          gsap.ticker.lagSmoothing(0);
+        } else {
+          const raf = t => {lenis.raf(t); requestAnimationFrame(raf);}; requestAnimationFrame(raf);
+        }
+        lenis.stop();
+      }
+      PF.scrollTo = function (target) {
+        if (PF.lenis) PF.lenis.scrollTo(target, {offset: 0, duration: 1.5});
+        else if (typeof target === 'number') window.scrollTo({top: target, behavior: reduce ? 'auto' : 'smooth'});
+        else target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+      };
+      function bindAnchors() {
+        $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+          const id = a.getAttribute('href');
+          if (!id || id.length < 2) return;
+          const el = $(id); if (!el) return;
+          e.preventDefault();
+          if (PF.closeMenu) PF.closeMenu(true);
+          setTimeout(() => PF.scrollTo(id === '#home' ? 0 : el), document.body.classList.contains('menu-open') ? 0 : 0);
+        }));
+      }
+
+      /* ---- header theme: dark over dark sections, light over light ---- */
+      function initNavTheme() {
+        const nav = $('#nav'), secs = $$('[data-theme]');
+        const check = () => {
+          const y = 44; let theme = 'light';
+          for (const s of secs) {const r = s.getBoundingClientRect(); if (r.top <= y && r.bottom >= y) {theme = s.dataset.theme; break;} }
+          nav.classList.toggle('is-dark', theme === 'dark');
+        };
+        window.addEventListener('scroll', check, {passive: true});
+        window.addEventListener('resize', check);
+        check();
+      }
+
+      /* ---- preloader ---- */
+      function runPreloader() {
+        return new Promise(resolve => {
+          const pre = $('#preloader');
+          const done = () => {document.body.classList.remove('is-loading'); if (PF.lenis) PF.lenis.start(); resolve();};
+          if (!pre) return done();
+          if (!hasGSAP || reduce) {pre.remove(); return done();}
+
+          // build animated text
+          const txt = $('#plText'); 'LOADING EXPERIENCE'.split('').forEach(c => {const s = document.createElement('span'); s.className = 'pl-char'; s.textContent = c; txt.appendChild(s);});
+
+          const num = $('#plNum'), bar = $('#plBar'), state = {v: 0};
+          const loaded = new Promise(r => {if (document.readyState === 'complete') r(); else {window.addEventListener('load', r, {once: true}); setTimeout(r, 7000);} });
+
+          gsap.timeline()
+            .from('.pl-logo', {scale: .55, opacity: 0, duration: 1.2, ease: 'expo.out'})
+            .from('.pl-char', {yPercent: 120, stagger: .035, duration: .9, ease: 'power4.out'}, .2)
+            .from('.pl-detail', {opacity: 0, duration: .8, stagger: .1}, .3);
+
+          const progressDone = new Promise(r => {
+            gsap.to(state, {
+              v: 100, duration: 2.8, ease: 'power2.inOut', onUpdate() {
+                num.textContent = Math.round(state.v); gsap.set(bar, {scaleX: state.v / 100});
+              }, onComplete: r
+            });
+          });
+
+          Promise.all([progressDone, loaded]).then(() => {
+            const tl = gsap.timeline({onComplete() {pre.remove(); done(); if (window.ScrollTrigger) ScrollTrigger.refresh();} });
+            tl.to('.pl-text,.pl-top,.pl-bottom', {opacity: 0, duration: .45, ease: 'power2.out'})
+              .to('.pl-logo', {scale: 7, opacity: 0, duration: 1.15, ease: 'power3.in'}, .15)
+              .to(pre, {clipPath: 'inset(0 0 100% 0)', duration: 1.15, ease: 'expo.inOut'}, .75)
+              .add(() => resolve(), 1.0);   // hero intro starts as the curtain lifts
+          });
+        });
+      }
+
+      /* ---- boot ---- */
+      PF.boot = function () {
+        if (window.lucide) lucide.createIcons();
+        applyConfig();
+        buildMarquee();
+        $$('[data-chars]').forEach(splitChars);
+        fitText();
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => {fitText(); if (hasGSAP) ScrollTrigger.refresh();});
+        let rt; window.addEventListener('resize', () => {clearTimeout(rt); rt = setTimeout(() => {fitText(); if (hasGSAP) ScrollTrigger.refresh();}, 150);});
+
+        const animate = hasGSAP && !reduce;
+        if (hasGSAP) gsap.registerPlugin(ScrollTrigger);
+        initLenis();
+        bindAnchors();
+        initNavTheme();
+        if (animate) {PF.prepIntro(); PF.initScrollAnimations();}
+        PF.initInteractions();
+
+        runPreloader().then(() => {if (animate) PF.playIntro();});
+        window.addEventListener('load', () => {fitText(); if (hasGSAP) ScrollTrigger.refresh();});
+      };
+    })();
+  </script>
+
+  <!-- =========================================================
+     animations.js — GSAP + ScrollTrigger
+     ========================================================= -->
+  <script>
+    (function () {
+      'use strict';
+      const PF = window.PF, {$, $$} = PF;
+      if (!PF.hasGSAP) {PF.prepIntro = PF.initScrollAnimations = PF.playIntro = () => { }; return;}
+
+      const small = () => window.innerWidth < 768;
+
+      /* ---- initial hidden states for hero intro (covered by preloader) ---- */
+      PF.prepIntro = function () {
+        gsap.set('.hero-title .chi', {yPercent: 120});
+        gsap.set('.hero-portrait-in', {opacity: 0});
+        gsap.set('.hc-in', {opacity: 0});
+        gsap.set('.hero-decor', {opacity: 0});
+        gsap.set('.nav', {yPercent: -160, opacity: 0});
+        gsap.set('.scroll-hint', {opacity: 0});
+      };
+
+      /* ---- hero intro (plays when the preloader curtain lifts) ---- */
+      PF.playIntro = function () {
+        const tl = gsap.timeline({defaults: {ease: 'expo.out'}});
+        tl.to('.hero-title .chi', {yPercent: 0, duration: 1.6, stagger: .06}, 0)
+          .fromTo('.hero-portrait-in', {opacity: 0, y: 90, scale: 1.08}, {opacity: 1, y: 0, scale: 1, duration: 1.9}, .15)
+          .to('.nav', {yPercent: 0, opacity: 1, duration: 1.3}, .4)
+          .fromTo('.hc-in', {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: 1.3, stagger: .1}, .6)
+          .fromTo('.hero-decor', {opacity: 0, scale: 0}, {opacity: 1, scale: 1, duration: 1, stagger: .1, ease: 'back.out(2)'}, .9)
+          .to('.scroll-hint', {opacity: 1, duration: 1}, 1.4)
+          .add(() => {
+            // count-up numbers
+            $$('[data-count]').forEach(el => {
+              const end = +el.dataset.count, pad = +(el.dataset.pad || 0), suf = el.dataset.suffix || '', o = {v: 0};
+              gsap.to(o, {v: end, duration: 1.6, ease: 'power3.out', onUpdate() {el.textContent = String(Math.round(o.v)).padStart(pad, '0') + suf;} });
+            });
+            // gentle floating loops (desktop only)
+            if (!small()) {
+              $$('.hc-in').forEach((el, i) => gsap.to(el, {y: i % 2 ? 8 : -8, duration: 2.6 + i * .3, ease: 'sine.inOut', repeat: -1, yoyo: true}));
+              gsap.to('.hero-decor.d1', {y: -18, x: 8, duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true});
+              gsap.to('.hero-decor.d4', {y: 16, x: -10, duration: 3.6, ease: 'sine.inOut', repeat: -1, yoyo: true});
+            }
+          }, 2.6);   // after the card entrance tweens have finished
+      };
+
+      /* ---- all scroll-linked animations ---- */
+      PF.initScrollAnimations = function () {
+
+        /* hero subtle parallax (desktop only) */
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 1100px)', () => {
+          $$('[data-hero-parallax]').forEach(el => {
+            gsap.to(el, {y: +el.dataset.heroParallax, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}});
+          });
+        });
+
+        /* split-word reveals (headings) */
+        $$('[data-words]').forEach(el => {
+          PF.splitWords(el);
+          gsap.from($$('.wi', el), {yPercent: 115, duration: 1.1, ease: 'expo.out', stagger: .045, scrollTrigger: {trigger: el, start: 'top 88%'}});
+        });
+
+        /* generic fade-ups */
+        $$('[data-fade]').forEach(el => {
+          gsap.from(el, {y: 40, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: {trigger: el, start: 'top 90%'}});
+        });
+
+        /* staggered groups */
+        $$('[data-stagger]').forEach(el => {
+          gsap.from(el.children, {y: 40, opacity: 0, duration: .95, ease: 'power3.out', stagger: .1, scrollTrigger: {trigger: el, start: 'top 85%'}});
+        });
+
+        /* about portrait parallax */
+        if (!small()) {
+          gsap.fromTo('.about-visual .portrait', {yPercent: 6}, {yPercent: -4, ease: 'none', scrollTrigger: {trigger: '.about-visual', start: 'top bottom', end: 'bottom top', scrub: true}});
+        }
+
+        /* service cards: stagger into view */
+        $$('.svc').forEach(card => {
+          gsap.from(card, {
+            y: 120, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: {trigger: card, start: 'top 92%'},
+            onComplete() {gsap.set(card, {clearProps: 'transform,opacity'});}
+          });
+          gsap.from($$('.tag', card), {y: 14, opacity: 0, duration: .7, stagger: .06, ease: 'power2.out', scrollTrigger: {trigger: card, start: 'top 75%'}});
+        });
+
+        /* project image reveal + parallax */
+        $$('[data-reveal-clip]').forEach(view => {
+          gsap.fromTo(view, {clipPath: 'inset(100% 0% 0% 0%)'}, {clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'expo.inOut', scrollTrigger: {trigger: view, start: 'top 85%'}});
+          gsap.from($('.zoom', view), {scale: 1.3, duration: 1.8, ease: 'expo.out', scrollTrigger: {trigger: view, start: 'top 85%'}, onComplete() {gsap.set($('.zoom', view), {clearProps: 'transform'});} });
+        });
+        if (!small()) {
+          $$('[data-parallax]').forEach(img => {
+            gsap.fromTo(img, {yPercent: -4}, {yPercent: 4, ease: 'none', scrollTrigger: {trigger: img.closest('.browser-view'), start: 'top bottom', end: 'bottom top', scrub: true}});
+          });
+        }
+
+        /* marquee reacts to scroll velocity */
+        try {
+          const tracks = $$('.marquee-track');
+          const anims = tracks.map(t => t.getAnimations()[0]).filter(Boolean);
+          const rate = {r: 1};
+          if (anims.length) {
+            ScrollTrigger.create({
+              trigger: '.tools', start: 'top bottom', end: 'bottom top', onUpdate(self) {
+                const boost = 1 + Math.min(Math.abs(self.getVelocity()) / 400, 6);
+                if (boost > rate.r) {rate.r = boost; gsap.to(rate, {r: 1, duration: 1.4, ease: 'power2.out', overwrite: true, onUpdate() {anims.forEach(a => a.updatePlaybackRate(rate.r));} }); anims.forEach(a => a.updatePlaybackRate(rate.r));}
+              }
+            });
+          }
+        } catch (e) { /* animation API unavailable: marquee simply runs at constant speed */}
+
+        /* contact reveal */
+        gsap.from('#formCard', {y: 90, opacity: 0, duration: 1.3, ease: 'expo.out', scrollTrigger: {trigger: '#formCard', start: 'top 88%'}});
+        gsap.from('#contactCanvas', {opacity: 0, duration: 2, scrollTrigger: {trigger: '#contact', start: 'top 70%'}});
+
+        /* footer big typography */
+        gsap.from('.footer-name .chi', {yPercent: 110, duration: 1.4, ease: 'expo.out', stagger: .05, scrollTrigger: {trigger: '.footer-name-wrap', start: 'top 92%'}});
+        gsap.from('.footer-top, .footer-bottom', {opacity: 0, y: 30, duration: 1, ease: 'power3.out', stagger: .15, scrollTrigger: {trigger: '.footer', start: 'top 85%'}});
+      };
+    })();
+  </script>
+
+  <!-- =========================================================
+     interactions.js — cursor, magnetic buttons, menu, form, three.js
+     ========================================================= -->
+  <script>
+    (function () {
+      'use strict';
+      const PF = window.PF, {$, $$, CONFIG, reduce, hasGSAP} = PF;
+
+      /* ---- custom cursor ---- */
+      function initCursor() {
+        const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+        if (!fine || reduce || !hasGSAP) return;
+        document.documentElement.classList.add('has-cursor');
+        const dot = $('#cDot'), ring = $('#cRing');
+        const dx = gsap.quickTo(dot, 'x', {duration: .1, ease: 'power3'}), dy = gsap.quickTo(dot, 'y', {duration: .1, ease: 'power3'});
+        const rx = gsap.quickTo(ring, 'x', {duration: .5, ease: 'power3'}), ry = gsap.quickTo(ring, 'y', {duration: .5, ease: 'power3'});
+        window.addEventListener('mousemove', e => {dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);});
+        const sel = 'a, button, .tag, .chip, .m-item, .svc-media, .browser, input, textarea';
+        document.addEventListener('mouseover', e => {if (e.target.closest(sel)) ring.classList.add('is-hover');});
+        document.addEventListener('mouseout', e => {if (e.target.closest(sel)) ring.classList.remove('is-hover');});
+      }
+
+      /* ---- magnetic buttons ---- */
+      function initMagnetic() {
+        if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches || reduce || !hasGSAP) return;
+        $$('[data-magnetic]').forEach(el => {
+          const xTo = gsap.quickTo(el, 'x', {duration: .5, ease: 'power3'}), yTo = gsap.quickTo(el, 'y', {duration: .5, ease: 'power3'});
+          el.addEventListener('mousemove', e => {const r = el.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * .3); yTo((e.clientY - r.top - r.height / 2) * .35);});
+          el.addEventListener('mouseleave', () => {xTo(0); yTo(0);});
+        });
+      }
+
+      /* ---- image tilt / follow on hover (service visuals + project mockups) ---- */
+      function initHoverMotion() {
+        if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches || reduce || !hasGSAP) return;
+        $$('.svc-media').forEach(box => {
+          const img = $('img', box);
+          const xTo = gsap.quickTo(img, 'x', {duration: .8, ease: 'power3'}), yTo = gsap.quickTo(img, 'y', {duration: .8, ease: 'power3'});
+          box.addEventListener('mousemove', e => {const r = box.getBoundingClientRect(); xTo(((e.clientX - r.left) / r.width - .5) * -34); yTo(((e.clientY - r.top) / r.height - .5) * -26);});
+          box.addEventListener('mouseleave', () => {xTo(0); yTo(0);});
+        });
+        // hero portrait follows the mouse very slightly
+        const hero = $('.hero'), port = $('.hero-portrait-in');
+        if (hero && port && window.innerWidth >= 1100) {
+          const px = gsap.quickTo(port, 'x', {duration: 1.2, ease: 'power3'});
+          hero.addEventListener('mousemove', e => px((e.clientX / window.innerWidth - .5) * 24));
+        }
+      }
+
+      /* ---- full-screen menu ---- */
+      function initMenu() {
+        const btn = $('#menuBtn'), menu = $('#menu'), body = document.body;
+        menu.inert = true;
+        const set = open => {
+          body.classList.toggle('menu-open', open);
+          btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+          menu.inert = !open;
+          if (PF.lenis) {open ? PF.lenis.stop() : PF.lenis.start();}
+          else body.style.overflow = open ? 'hidden' : '';
+        };
+        btn.addEventListener('click', () => set(!body.classList.contains('menu-open')));
+        document.addEventListener('keydown', e => {if (e.key === 'Escape' && body.classList.contains('menu-open')) set(false);});
+        PF.closeMenu = () => {if (body.classList.contains('menu-open')) set(false);};
+      }
+
+      /* ---- resume download ---- */
+      function initResume() {
+        $$('[data-resume]').forEach(b => b.addEventListener('click', () => {
+          const a = document.createElement('a');
+          if (CONFIG.resumeUrl) {a.href = CONFIG.resumeUrl; a.download = ''; a.target = '_blank'; a.rel = 'noopener';}
+          else {
+            const text = [
+              CONFIG.name.toUpperCase() + ' — FULL-STACK / FRONTEND DEVELOPER', CONFIG.location + ' · ' + CONFIG.email, '',
+              'SUMMARY', 'Full-stack developer building scalable, modern and interactive digital experiences.', '',
+              'SKILLS', 'HTML5, CSS3, JavaScript, React, Next.js, Node.js, Express, MongoDB, GSAP, Three.js', '',
+              'EXPERIENCE', 'Freelance Developer (2023 - Now)', 'Frontend Intern (2024)', '',
+              'EDUCATION', 'B.Tech, Computer Science (2023 - 2027)', '',
+              '(Placeholder resume — set CONFIG.resumeUrl in index.html to serve your real PDF.)'
+            ].join('\n');
+            a.href = URL.createObjectURL(new Blob([text], {type: 'text/plain'})); a.download = CONFIG.name.replace(/\s+/g, '-') + '-Resume.txt';
+          }
+          document.body.appendChild(a); a.click(); a.remove();
+        }));
+      }
+
+      /* ---- back to top ---- */
+      function initToTop() {$('#toTop').addEventListener('click', () => PF.scrollTo(0));}
+
+      /* ---- contact form: validation + honest submission ---- */
+      function initForm() {
+        const form = $('#contactForm'), status = $('#formStatus'), btn = $('#cfSubmit');
+        const rules = {
+          name: v => v.trim().length >= 2 ? '' : 'Please enter your full name (at least 2 characters).',
+          email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Please enter a valid email address.',
+          message: v => v.trim().length >= 10 ? '' : 'Your message should be at least 10 characters.'
+        };
+        const ids = {name: 'cf-name', email: 'cf-email', message: 'cf-msg'};
+        const check = key => {
+          const input = $('#' + ids[key]), msg = rules[key](input.value), field = input.closest('.field');
+          field.dataset.invalid = msg ? 'true' : 'false'; input.setAttribute('aria-invalid', !!msg);
+          input.setAttribute('aria-describedby', ids[key] + '-err'); $('#' + ids[key] + '-err').textContent = msg;
+          return !msg;
+        };
+        Object.keys(ids).forEach(k => {const i = $('#' + ids[k]); i.addEventListener('blur', () => check(k)); i.addEventListener('input', () => {if (i.closest('.field').dataset.invalid === 'true') check(k);});});
+
+        const say = (t, cls) => {status.textContent = t; status.className = 'form-status ' + (cls || '');};
+
+        form.addEventListener('submit', async e => {
+          e.preventDefault(); say('');
+          const valid = Object.keys(ids).map(check).every(Boolean);
+          if (!valid) {const bad = $('.field[data-invalid="true"] input, .field[data-invalid="true"] textarea', form); if (bad) bad.focus(); return;}
+          if (form.company.value) return;             // honeypot: silently drop bots
+
+          const data = {name: form.name.value.trim(), email: form.email.value.trim(), message: form.message.value.trim()};
+
+          if (CONFIG.formEndpoint) {
+            btn.disabled = true; say('Sending…');
+            try {
+              const res = await fetch(CONFIG.formEndpoint, {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(data)});
+              if (!res.ok) throw new Error('HTTP ' + res.status);
+              say('Thanks — your message has been sent. I will reply soon.', 'ok'); form.reset();
+            } catch (err) {say('Something went wrong sending your message. Please email me directly at ' + CONFIG.email + '.', 'bad');}
+            btn.disabled = false;
+          } else {
+            // No backend configured: be transparent and fall back to the visitor's email client.
+            say('No mail service is connected yet — opening your email app with your message ready to send.', '');
+            const subject = encodeURIComponent('Portfolio enquiry from ' + data.name);
+            const body = encodeURIComponent(data.message + '\n\n— ' + data.name + ' (' + data.email + ')');
+            window.location.href = 'mailto:' + CONFIG.email + '?subject=' + subject + '&body=' + body;
+          }
+        });
+      }
+
+      /* ---- Three.js: subtle wireframe object behind the contact section ---- */
+      function initThree() {
+        const host = $('#contactCanvas');
+        if (!host || !window.THREE || reduce || window.innerWidth < 768) return;
+        let renderer;
+        try {renderer = new THREE.WebGLRenderer({alpha: true, antialias: true, powerPreference: 'low-power'});} catch (e) {return;}
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+        host.appendChild(renderer.domElement);
+
+        const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(45, 1, .1, 50); camera.position.z = 6;
+        const group = new THREE.Group(); scene.add(group);
+        const outer = new THREE.Mesh(new THREE.IcosahedronGeometry(1.9, 1), new THREE.MeshBasicMaterial({color: 0xFF4B16, wireframe: true, transparent: true, opacity: .26}));
+        const inner = new THREE.Mesh(new THREE.IcosahedronGeometry(1.0, 0), new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true, transparent: true, opacity: .16}));
+        group.add(outer, inner);
+        const pts = []; for (let i = 0; i < 220; i++) {const v = new THREE.Vector3().randomDirection ? new THREE.Vector3().randomDirection() : new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).normalize(); v.multiplyScalar(2.8 + Math.random() * .9); pts.push(v);}
+        const pg = new THREE.BufferGeometry().setFromPoints(pts);
+        group.add(new THREE.Points(pg, new THREE.PointsMaterial({color: 0xffffff, size: .025, transparent: true, opacity: .55})));
+
+        const resize = () => {
+          const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return;
+          renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix();
+          group.position.set(-Math.min(2.6, camera.aspect * 1.25), .2, 0);
+        };
+        resize(); window.addEventListener('resize', resize);
+
+        const mouse = {x: 0, y: 0}; window.addEventListener('mousemove', e => {mouse.x = e.clientX / innerWidth - .5; mouse.y = e.clientY / innerHeight - .5;});
+        let visible = false; new IntersectionObserver(en => {visible = en[0].isIntersecting;}, {threshold: 0}).observe(host);
+        const clock = new THREE.Clock();
+        (function loop() {
+          requestAnimationFrame(loop);
+          if (!visible) return;
+          const t = clock.getElapsedTime();
+          outer.rotation.y = t * .12 + mouse.x * .6; outer.rotation.x = t * .07 + mouse.y * .5;
+          inner.rotation.y = -t * .2; inner.rotation.z = t * .1;
+          group.children[2].rotation.y = t * .03;
+          renderer.render(scene, camera);
+        })();
+      }
+
+      PF.initInteractions = function () {
+        initMenu(); initResume(); initToTop(); initForm();
+        initCursor(); initMagnetic(); initHoverMotion(); initThree();
+      };
+    })();
+  </script>
+  <script>window.PF && window.PF.boot();</script>
+</body>
+
+</html>
