@@ -1292,7 +1292,6 @@
       border-radius: 22px;
       overflow: hidden;
       min-height: 260px;
-      aspect-ratio: 16/11;
       background: linear-gradient(135deg, #1c1c1c, #2a1409)
     }
 
@@ -2064,10 +2063,6 @@
 
       .proj-facts {
         grid-template-columns: repeat(2, auto)
-      }
-
-      .svc-media {
-        aspect-ratio: 0 !important;
       }
 
       .contact-list li {
