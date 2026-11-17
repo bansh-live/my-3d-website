@@ -612,7 +612,7 @@
         email: 'banshthakur113@gmail.com',
         location: 'HP, India',
         profileImage: '',            // e.g. 'images/profile.png' (transparent PNG cut-out). Empty = built-in placeholder.
-        resumeUrl: 'file:///C:/Users/BANSH/Downloads/banshresume%20(1)%20(1).pdf',               // e.g. 'files/resume.pdf'. Empty = a plain-text resume is generated on click.
+        resumeUrl: './resume.pdf',               // e.g. 'files/resume.pdf'. Empty = a plain-text resume is generated on click.
         formEndpoint: '',            // e.g. 'https://formspree.io/f/xxxxxxx'. Empty = opens the visitor's email app (mailto).
         socials: {
           github: 'https://github.com/bansh-live',
@@ -987,25 +987,16 @@
         PF.closeMenu = () => { if (body.classList.contains('menu-open')) set(false); };
       }
 
-      /* ---- resume download ---- */
-      function initResume() {
-        $$('[data-resume]').forEach(b => b.addEventListener('click', () => {
-          const a = document.createElement('a');
-          if (CONFIG.resumeUrl) { a.href = CONFIG.resumeUrl; a.download = ''; a.target = '_blank'; a.rel = 'noopener'; }
-          else {
-            const text = [
-              CONFIG.name.toUpperCase() + ' — FULL-STACK / FRONTEND DEVELOPER', CONFIG.location + ' · ' + CONFIG.email, '',
-              'SUMMARY', 'Full-stack developer building scalable, modern and interactive digital experiences.', '',
-              'SKILLS', 'HTML5, CSS3, JavaScript, React, Next.js, Node.js, Express, MongoDB, GSAP, Three.js', '',
-              'EXPERIENCE', 'Freelance Developer (2023 - Now)', 'Frontend Intern (2024)', '',
-              'EDUCATION', 'B.Tech, Computer Science (2023 - 2027)', '',
-              '(Placeholder resume — set CONFIG.resumeUrl in index.html to serve your real PDF.)'
-            ].join('\n');
-            a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' })); a.download = CONFIG.name.replace(/\s+/g, '-') + '-Resume.txt';
-          }
-          document.body.appendChild(a); a.click(); a.remove();
-        }));
-      }
+
+      
+/* ---- resume download ---- */
+function initResume() {
+  $$('[data-resume]').forEach(b => {
+    b.addEventListener('click', () => {
+      window.open('./resume.pdf', '_blank');
+    });
+  });
+}
 
       /* ---- back to top ---- */
       function initToTop() { $('#toTop').addEventListener('click', () => PF.scrollTo(0)); }
