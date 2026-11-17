@@ -220,7 +220,7 @@
         <div class="about-visual" data-fade>
           <span class="ghost display" aria-hidden="true">About</span>
           <div data-portrait-wrap style="position:absolute;inset:0">
-              <img src="images/about-image.png" alt="Bansh Kumar - Frontend Developer">
+            <img src="images/about-image.png" alt="Bansh Kumar - Frontend Developer">
           </div>
           <span class="about-tag"><i></i>Available for work</span>
         </div>
@@ -454,8 +454,7 @@
             <div class="browser" data-tilt-soft>
               <div class="browser-bar"><i></i><i></i><i></i><span>app.example.com</span></div>
               <div class="browser-view" data-reveal-clip>
-                <div class="zoom"><img
-                    src="https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg"
+                <div class="zoom"><img src="https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg"
                     alt="Person using an interactive web application on a laptop" loading="lazy" decoding="async"
                     data-parallax onerror="this.style.opacity=0"></div>
               </div>
@@ -524,9 +523,10 @@
           <ul class="contact-list" data-stagger>
             <li><span class="k">Email</span><a data-email href="mailto:banshthakur113@gmail.com"><span
                   data-email-text>banshthakur113@gmail.com</span></a></li>
-            <li><span class="k">LinkedIn</span><a data-social="linkedin" href="https://www.linkedin.com/in/bansh-choudhary-53068441b/"
-               rel="noopener noreferrer">/in/alexmorgan <i data-lucide="arrow-up-right"></i></a></li>
-            <li><span class="k">GitHub</span><a data-social="github" href="https://github.com/bansh-live" 
+            <li><span class="k">LinkedIn</span><a data-social="linkedin"
+                href="https://www.linkedin.com/in/bansh-choudhary-53068441b/" rel="noopener noreferrer">/in/alexmorgan
+                <i data-lucide="arrow-up-right"></i></a></li>
+            <li><span class="k">GitHub</span><a data-social="github" href="https://github.com/bansh-live"
                 rel="noopener noreferrer">@BANSH<i data-lucide="arrow-up-right"></i></a></li>
             <li><span class="k">Location</span><span data-loc2>HP, India</span></li>
             <li><span class="k">Status</span><span class="status"><i></i>Available for freelance &amp; full-time</span>
@@ -542,7 +542,8 @@
                 autocomplete="name" required minlength="2" placeholder="Bansh Kumar"><span class="err"
                 id="cf-name-err"></span></div>
             <div class="field"><label for="cf-email">Email Address</label><input id="cf-email" name="email" type="email"
-                autocomplete="email" required placeholder="bansh@company.com"><span class="err" id="cf-email-err"></span>
+                autocomplete="email" required placeholder="bansh@company.com"><span class="err"
+                id="cf-email-err"></span>
             </div>
             <div class="field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" required
                 minlength="10" placeholder="Tell me about your idea, timeline and budget…"></textarea><span class="err"
@@ -569,12 +570,12 @@
         </nav>
         <div class="footer-right">
           <div class="row">
-            <a class="icon-btn" data-social="github" href="https://github.com/bansh-live"
-              rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+            <a class="icon-btn" data-social="github" href="https://github.com/bansh-live" rel="noopener noreferrer"
+              aria-label="GitHub"><i data-lucide="github"></i></a>
             <a class="icon-btn" data-social="linkedin" href="https://www.linkedin.com/in/bansh-choudhary-53068441b/"
               rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-            <a class="icon-btn" data-social="instagram" href="https://www.instagram.com/"
-              rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a class="icon-btn" data-social="instagram" href="https://www.instagram.com/" rel="noopener noreferrer"
+              aria-label="Instagram"><i data-lucide="instagram"></i></a>
           </div>
           <button class="to-top" id="toTop" type="button" aria-label="Back to top" data-magnetic><i
               data-lucide="arrow-up"></i></button>
@@ -611,7 +612,7 @@
         email: 'banshthakur113@gmail.com',
         location: 'HP, India',
         profileImage: '',            // e.g. 'images/profile.png' (transparent PNG cut-out). Empty = built-in placeholder.
-        resumeUrl: '',               // e.g. 'files/resume.pdf'. Empty = a plain-text resume is generated on click.
+        resumeUrl: 'file:///C:/Users/BANSH/Downloads/banshresume%20(1)%20(1).pdf',               // e.g. 'files/resume.pdf'. Empty = a plain-text resume is generated on click.
         formEndpoint: '',            // e.g. 'https://formspree.io/f/xxxxxxx'. Empty = opens the visitor's email app (mailto).
         socials: {
           github: 'https://github.com/bansh-live',
@@ -626,11 +627,11 @@
       const $$ = (s, c = document) => [...c.querySelectorAll(s)];
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const hasGSAP = !!(window.gsap && window.ScrollTrigger);
-      const PF = window.PF = {CONFIG, $, $$, reduce, hasGSAP, lenis: null};
+      const PF = window.PF = { CONFIG, $, $$, reduce, hasGSAP, lenis: null };
 
       /* ---- apply config to the DOM ---- */
       function applyConfig() {
-        $$('[data-social]').forEach(a => {const u = CONFIG.socials[a.dataset.social]; if (u) a.href = u;});
+        $$('[data-social]').forEach(a => { const u = CONFIG.socials[a.dataset.social]; if (u) a.href = u; });
         $$('[data-email]').forEach(a => a.href = 'mailto:' + CONFIG.email);
         $$('[data-email-text]').forEach(s => s.textContent = CONFIG.email);
         $$('[data-loc2]').forEach(s => s.textContent = CONFIG.location);
@@ -662,13 +663,13 @@
               const frag = document.createDocumentFragment();
               n.textContent.split(/(\s+)/).forEach(part => {
                 if (!part) return;
-                if (/^\s+$/.test(part)) {frag.appendChild(document.createTextNode(' ')); return;}
+                if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
                 const w = document.createElement('span'); w.className = 'w';
                 const wi = document.createElement('span'); wi.className = 'wi'; wi.textContent = part;
                 w.appendChild(wi); frag.appendChild(w);
               });
               n.replaceWith(frag);
-            } else if (n.nodeType === 1) {walk(n);}
+            } else if (n.nodeType === 1) { walk(n); }
           });
         };
         walk(el);
@@ -698,20 +699,20 @@
       /* ---- Lenis smooth scrolling (+ GSAP ticker sync) ---- */
       function initLenis() {
         if (reduce || !window.Lenis) return;
-        const lenis = PF.lenis = new Lenis({duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true});
+        const lenis = PF.lenis = new Lenis({ duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
         if (hasGSAP) {
           lenis.on('scroll', ScrollTrigger.update);
           gsap.ticker.add(t => lenis.raf(t * 1000));
           gsap.ticker.lagSmoothing(0);
         } else {
-          const raf = t => {lenis.raf(t); requestAnimationFrame(raf);}; requestAnimationFrame(raf);
+          const raf = t => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf);
         }
         lenis.stop();
       }
       PF.scrollTo = function (target) {
-        if (PF.lenis) PF.lenis.scrollTo(target, {offset: 0, duration: 1.5});
-        else if (typeof target === 'number') window.scrollTo({top: target, behavior: reduce ? 'auto' : 'smooth'});
-        else target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+        if (PF.lenis) PF.lenis.scrollTo(target, { offset: 0, duration: 1.5 });
+        else if (typeof target === 'number') window.scrollTo({ top: target, behavior: reduce ? 'auto' : 'smooth' });
+        else target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
       };
       function bindAnchors() {
         $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
@@ -729,10 +730,10 @@
         const nav = $('#nav'), secs = $$('[data-theme]');
         const check = () => {
           const y = 44; let theme = 'light';
-          for (const s of secs) {const r = s.getBoundingClientRect(); if (r.top <= y && r.bottom >= y) {theme = s.dataset.theme; break;} }
+          for (const s of secs) { const r = s.getBoundingClientRect(); if (r.top <= y && r.bottom >= y) { theme = s.dataset.theme; break; } }
           nav.classList.toggle('is-dark', theme === 'dark');
         };
-        window.addEventListener('scroll', check, {passive: true});
+        window.addEventListener('scroll', check, { passive: true });
         window.addEventListener('resize', check);
         check();
       }
@@ -741,34 +742,34 @@
       function runPreloader() {
         return new Promise(resolve => {
           const pre = $('#preloader');
-          const done = () => {document.body.classList.remove('is-loading'); if (PF.lenis) PF.lenis.start(); resolve();};
+          const done = () => { document.body.classList.remove('is-loading'); if (PF.lenis) PF.lenis.start(); resolve(); };
           if (!pre) return done();
-          if (!hasGSAP || reduce) {pre.remove(); return done();}
+          if (!hasGSAP || reduce) { pre.remove(); return done(); }
 
           // build animated text
-          const txt = $('#plText'); 'LOADING EXPERIENCE'.split('').forEach(c => {const s = document.createElement('span'); s.className = 'pl-char'; s.textContent = c; txt.appendChild(s);});
+          const txt = $('#plText'); 'LOADING EXPERIENCE'.split('').forEach(c => { const s = document.createElement('span'); s.className = 'pl-char'; s.textContent = c; txt.appendChild(s); });
 
-          const num = $('#plNum'), bar = $('#plBar'), state = {v: 0};
-          const loaded = new Promise(r => {if (document.readyState === 'complete') r(); else {window.addEventListener('load', r, {once: true}); setTimeout(r, 7000);} });
+          const num = $('#plNum'), bar = $('#plBar'), state = { v: 0 };
+          const loaded = new Promise(r => { if (document.readyState === 'complete') r(); else { window.addEventListener('load', r, { once: true }); setTimeout(r, 7000); } });
 
           gsap.timeline()
-            .from('.pl-logo', {scale: .55, opacity: 0, duration: 1.2, ease: 'expo.out'})
-            .from('.pl-char', {yPercent: 120, stagger: .035, duration: .9, ease: 'power4.out'}, .2)
-            .from('.pl-detail', {opacity: 0, duration: .8, stagger: .1}, .3);
+            .from('.pl-logo', { scale: .55, opacity: 0, duration: 1.2, ease: 'expo.out' })
+            .from('.pl-char', { yPercent: 120, stagger: .035, duration: .9, ease: 'power4.out' }, .2)
+            .from('.pl-detail', { opacity: 0, duration: .8, stagger: .1 }, .3);
 
           const progressDone = new Promise(r => {
             gsap.to(state, {
               v: 100, duration: 2.8, ease: 'power2.inOut', onUpdate() {
-                num.textContent = Math.round(state.v); gsap.set(bar, {scaleX: state.v / 100});
+                num.textContent = Math.round(state.v); gsap.set(bar, { scaleX: state.v / 100 });
               }, onComplete: r
             });
           });
 
           Promise.all([progressDone, loaded]).then(() => {
-            const tl = gsap.timeline({onComplete() {pre.remove(); done(); if (window.ScrollTrigger) ScrollTrigger.refresh();} });
-            tl.to('.pl-text,.pl-top,.pl-bottom', {opacity: 0, duration: .45, ease: 'power2.out'})
-              .to('.pl-logo', {scale: 7, opacity: 0, duration: 1.15, ease: 'power3.in'}, .15)
-              .to(pre, {clipPath: 'inset(0 0 100% 0)', duration: 1.15, ease: 'expo.inOut'}, .75)
+            const tl = gsap.timeline({ onComplete() { pre.remove(); done(); if (window.ScrollTrigger) ScrollTrigger.refresh(); } });
+            tl.to('.pl-text,.pl-top,.pl-bottom', { opacity: 0, duration: .45, ease: 'power2.out' })
+              .to('.pl-logo', { scale: 7, opacity: 0, duration: 1.15, ease: 'power3.in' }, .15)
+              .to(pre, { clipPath: 'inset(0 0 100% 0)', duration: 1.15, ease: 'expo.inOut' }, .75)
               .add(() => resolve(), 1.0);   // hero intro starts as the curtain lifts
           });
         });
@@ -781,19 +782,19 @@
         buildMarquee();
         $$('[data-chars]').forEach(splitChars);
         fitText();
-        if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => {fitText(); if (hasGSAP) ScrollTrigger.refresh();});
-        let rt; window.addEventListener('resize', () => {clearTimeout(rt); rt = setTimeout(() => {fitText(); if (hasGSAP) ScrollTrigger.refresh();}, 150);});
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitText(); if (hasGSAP) ScrollTrigger.refresh(); });
+        let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { fitText(); if (hasGSAP) ScrollTrigger.refresh(); }, 150); });
 
         const animate = hasGSAP && !reduce;
         if (hasGSAP) gsap.registerPlugin(ScrollTrigger);
         initLenis();
         bindAnchors();
         initNavTheme();
-        if (animate) {PF.prepIntro(); PF.initScrollAnimations();}
+        if (animate) { PF.prepIntro(); PF.initScrollAnimations(); }
         PF.initInteractions();
 
-        runPreloader().then(() => {if (animate) PF.playIntro();});
-        window.addEventListener('load', () => {fitText(); if (hasGSAP) ScrollTrigger.refresh();});
+        runPreloader().then(() => { if (animate) PF.playIntro(); });
+        window.addEventListener('load', () => { fitText(); if (hasGSAP) ScrollTrigger.refresh(); });
       };
     })();
   </script>
@@ -804,41 +805,41 @@
   <script>
     (function () {
       'use strict';
-      const PF = window.PF, {$, $$} = PF;
-      if (!PF.hasGSAP) {PF.prepIntro = PF.initScrollAnimations = PF.playIntro = () => { }; return;}
+      const PF = window.PF, { $, $$ } = PF;
+      if (!PF.hasGSAP) { PF.prepIntro = PF.initScrollAnimations = PF.playIntro = () => { }; return; }
 
       const small = () => window.innerWidth < 768;
 
       /* ---- initial hidden states for hero intro (covered by preloader) ---- */
       PF.prepIntro = function () {
-        gsap.set('.hero-title .chi', {yPercent: 120});
-        gsap.set('.hero-portrait-in', {opacity: 0});
-        gsap.set('.hc-in', {opacity: 0});
-        gsap.set('.hero-decor', {opacity: 0});
-        gsap.set('.nav', {yPercent: -160, opacity: 0});
-        gsap.set('.scroll-hint', {opacity: 0});
+        gsap.set('.hero-title .chi', { yPercent: 120 });
+        gsap.set('.hero-portrait-in', { opacity: 0 });
+        gsap.set('.hc-in', { opacity: 0 });
+        gsap.set('.hero-decor', { opacity: 0 });
+        gsap.set('.nav', { yPercent: -160, opacity: 0 });
+        gsap.set('.scroll-hint', { opacity: 0 });
       };
 
       /* ---- hero intro (plays when the preloader curtain lifts) ---- */
       PF.playIntro = function () {
-        const tl = gsap.timeline({defaults: {ease: 'expo.out'}});
-        tl.to('.hero-title .chi', {yPercent: 0, duration: 1.6, stagger: .06}, 0)
-          .fromTo('.hero-portrait-in', {opacity: 0, y: 90, scale: 1.08}, {opacity: 1, y: 0, scale: 1, duration: 1.9}, .15)
-          .to('.nav', {yPercent: 0, opacity: 1, duration: 1.3}, .4)
-          .fromTo('.hc-in', {opacity: 0, y: 50}, {opacity: 1, y: 0, duration: 1.3, stagger: .1}, .6)
-          .fromTo('.hero-decor', {opacity: 0, scale: 0}, {opacity: 1, scale: 1, duration: 1, stagger: .1, ease: 'back.out(2)'}, .9)
-          .to('.scroll-hint', {opacity: 1, duration: 1}, 1.4)
+        const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+        tl.to('.hero-title .chi', { yPercent: 0, duration: 1.6, stagger: .06 }, 0)
+          .fromTo('.hero-portrait-in', { opacity: 0, y: 90, scale: 1.08 }, { opacity: 1, y: 0, scale: 1, duration: 1.9 }, .15)
+          .to('.nav', { yPercent: 0, opacity: 1, duration: 1.3 }, .4)
+          .fromTo('.hc-in', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1.3, stagger: .1 }, .6)
+          .fromTo('.hero-decor', { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 1, stagger: .1, ease: 'back.out(2)' }, .9)
+          .to('.scroll-hint', { opacity: 1, duration: 1 }, 1.4)
           .add(() => {
             // count-up numbers
             $$('[data-count]').forEach(el => {
-              const end = +el.dataset.count, pad = +(el.dataset.pad || 0), suf = el.dataset.suffix || '', o = {v: 0};
-              gsap.to(o, {v: end, duration: 1.6, ease: 'power3.out', onUpdate() {el.textContent = String(Math.round(o.v)).padStart(pad, '0') + suf;} });
+              const end = +el.dataset.count, pad = +(el.dataset.pad || 0), suf = el.dataset.suffix || '', o = { v: 0 };
+              gsap.to(o, { v: end, duration: 1.6, ease: 'power3.out', onUpdate() { el.textContent = String(Math.round(o.v)).padStart(pad, '0') + suf; } });
             });
             // gentle floating loops (desktop only)
             if (!small()) {
-              $$('.hc-in').forEach((el, i) => gsap.to(el, {y: i % 2 ? 8 : -8, duration: 2.6 + i * .3, ease: 'sine.inOut', repeat: -1, yoyo: true}));
-              gsap.to('.hero-decor.d1', {y: -18, x: 8, duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true});
-              gsap.to('.hero-decor.d4', {y: 16, x: -10, duration: 3.6, ease: 'sine.inOut', repeat: -1, yoyo: true});
+              $$('.hc-in').forEach((el, i) => gsap.to(el, { y: i % 2 ? 8 : -8, duration: 2.6 + i * .3, ease: 'sine.inOut', repeat: -1, yoyo: true }));
+              gsap.to('.hero-decor.d1', { y: -18, x: 8, duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true });
+              gsap.to('.hero-decor.d4', { y: 16, x: -10, duration: 3.6, ease: 'sine.inOut', repeat: -1, yoyo: true });
             }
           }, 2.6);   // after the card entrance tweens have finished
       };
@@ -850,48 +851,48 @@
         const mm = gsap.matchMedia();
         mm.add('(min-width: 1100px)', () => {
           $$('[data-hero-parallax]').forEach(el => {
-            gsap.to(el, {y: +el.dataset.heroParallax, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}});
+            gsap.to(el, { y: +el.dataset.heroParallax, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
           });
         });
 
         /* split-word reveals (headings) */
         $$('[data-words]').forEach(el => {
           PF.splitWords(el);
-          gsap.from($$('.wi', el), {yPercent: 115, duration: 1.1, ease: 'expo.out', stagger: .045, scrollTrigger: {trigger: el, start: 'top 88%'}});
+          gsap.from($$('.wi', el), { yPercent: 115, duration: 1.1, ease: 'expo.out', stagger: .045, scrollTrigger: { trigger: el, start: 'top 88%' } });
         });
 
         /* generic fade-ups */
         $$('[data-fade]').forEach(el => {
-          gsap.from(el, {y: 40, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: {trigger: el, start: 'top 90%'}});
+          gsap.from(el, { y: 40, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } });
         });
 
         /* staggered groups */
         $$('[data-stagger]').forEach(el => {
-          gsap.from(el.children, {y: 40, opacity: 0, duration: .95, ease: 'power3.out', stagger: .1, scrollTrigger: {trigger: el, start: 'top 85%'}});
+          gsap.from(el.children, { y: 40, opacity: 0, duration: .95, ease: 'power3.out', stagger: .1, scrollTrigger: { trigger: el, start: 'top 85%' } });
         });
 
         /* about portrait parallax */
         if (!small()) {
-          gsap.fromTo('.about-visual .portrait', {yPercent: 6}, {yPercent: -4, ease: 'none', scrollTrigger: {trigger: '.about-visual', start: 'top bottom', end: 'bottom top', scrub: true}});
+          gsap.fromTo('.about-visual .portrait', { yPercent: 6 }, { yPercent: -4, ease: 'none', scrollTrigger: { trigger: '.about-visual', start: 'top bottom', end: 'bottom top', scrub: true } });
         }
 
         /* service cards: stagger into view */
         $$('.svc').forEach(card => {
           gsap.from(card, {
-            y: 120, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: {trigger: card, start: 'top 92%'},
-            onComplete() {gsap.set(card, {clearProps: 'transform,opacity'});}
+            y: 120, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: card, start: 'top 92%' },
+            onComplete() { gsap.set(card, { clearProps: 'transform,opacity' }); }
           });
-          gsap.from($$('.tag', card), {y: 14, opacity: 0, duration: .7, stagger: .06, ease: 'power2.out', scrollTrigger: {trigger: card, start: 'top 75%'}});
+          gsap.from($$('.tag', card), { y: 14, opacity: 0, duration: .7, stagger: .06, ease: 'power2.out', scrollTrigger: { trigger: card, start: 'top 75%' } });
         });
 
         /* project image reveal + parallax */
         $$('[data-reveal-clip]').forEach(view => {
-          gsap.fromTo(view, {clipPath: 'inset(100% 0% 0% 0%)'}, {clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'expo.inOut', scrollTrigger: {trigger: view, start: 'top 85%'}});
-          gsap.from($('.zoom', view), {scale: 1.3, duration: 1.8, ease: 'expo.out', scrollTrigger: {trigger: view, start: 'top 85%'}, onComplete() {gsap.set($('.zoom', view), {clearProps: 'transform'});} });
+          gsap.fromTo(view, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'expo.inOut', scrollTrigger: { trigger: view, start: 'top 85%' } });
+          gsap.from($('.zoom', view), { scale: 1.3, duration: 1.8, ease: 'expo.out', scrollTrigger: { trigger: view, start: 'top 85%' }, onComplete() { gsap.set($('.zoom', view), { clearProps: 'transform' }); } });
         });
         if (!small()) {
           $$('[data-parallax]').forEach(img => {
-            gsap.fromTo(img, {yPercent: -4}, {yPercent: 4, ease: 'none', scrollTrigger: {trigger: img.closest('.browser-view'), start: 'top bottom', end: 'bottom top', scrub: true}});
+            gsap.fromTo(img, { yPercent: -4 }, { yPercent: 4, ease: 'none', scrollTrigger: { trigger: img.closest('.browser-view'), start: 'top bottom', end: 'bottom top', scrub: true } });
           });
         }
 
@@ -899,24 +900,24 @@
         try {
           const tracks = $$('.marquee-track');
           const anims = tracks.map(t => t.getAnimations()[0]).filter(Boolean);
-          const rate = {r: 1};
+          const rate = { r: 1 };
           if (anims.length) {
             ScrollTrigger.create({
               trigger: '.tools', start: 'top bottom', end: 'bottom top', onUpdate(self) {
                 const boost = 1 + Math.min(Math.abs(self.getVelocity()) / 400, 6);
-                if (boost > rate.r) {rate.r = boost; gsap.to(rate, {r: 1, duration: 1.4, ease: 'power2.out', overwrite: true, onUpdate() {anims.forEach(a => a.updatePlaybackRate(rate.r));} }); anims.forEach(a => a.updatePlaybackRate(rate.r));}
+                if (boost > rate.r) { rate.r = boost; gsap.to(rate, { r: 1, duration: 1.4, ease: 'power2.out', overwrite: true, onUpdate() { anims.forEach(a => a.updatePlaybackRate(rate.r)); } }); anims.forEach(a => a.updatePlaybackRate(rate.r)); }
               }
             });
           }
-        } catch (e) { /* animation API unavailable: marquee simply runs at constant speed */}
+        } catch (e) { /* animation API unavailable: marquee simply runs at constant speed */ }
 
         /* contact reveal */
-        gsap.from('#formCard', {y: 90, opacity: 0, duration: 1.3, ease: 'expo.out', scrollTrigger: {trigger: '#formCard', start: 'top 88%'}});
-        gsap.from('#contactCanvas', {opacity: 0, duration: 2, scrollTrigger: {trigger: '#contact', start: 'top 70%'}});
+        gsap.from('#formCard', { y: 90, opacity: 0, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: '#formCard', start: 'top 88%' } });
+        gsap.from('#contactCanvas', { opacity: 0, duration: 2, scrollTrigger: { trigger: '#contact', start: 'top 70%' } });
 
         /* footer big typography */
-        gsap.from('.footer-name .chi', {yPercent: 110, duration: 1.4, ease: 'expo.out', stagger: .05, scrollTrigger: {trigger: '.footer-name-wrap', start: 'top 92%'}});
-        gsap.from('.footer-top, .footer-bottom', {opacity: 0, y: 30, duration: 1, ease: 'power3.out', stagger: .15, scrollTrigger: {trigger: '.footer', start: 'top 85%'}});
+        gsap.from('.footer-name .chi', { yPercent: 110, duration: 1.4, ease: 'expo.out', stagger: .05, scrollTrigger: { trigger: '.footer-name-wrap', start: 'top 92%' } });
+        gsap.from('.footer-top, .footer-bottom', { opacity: 0, y: 30, duration: 1, ease: 'power3.out', stagger: .15, scrollTrigger: { trigger: '.footer', start: 'top 85%' } });
       };
     })();
   </script>
@@ -927,7 +928,7 @@
   <script>
     (function () {
       'use strict';
-      const PF = window.PF, {$, $$, CONFIG, reduce, hasGSAP} = PF;
+      const PF = window.PF, { $, $$, CONFIG, reduce, hasGSAP } = PF;
 
       /* ---- custom cursor ---- */
       function initCursor() {
@@ -935,21 +936,21 @@
         if (!fine || reduce || !hasGSAP) return;
         document.documentElement.classList.add('has-cursor');
         const dot = $('#cDot'), ring = $('#cRing');
-        const dx = gsap.quickTo(dot, 'x', {duration: .1, ease: 'power3'}), dy = gsap.quickTo(dot, 'y', {duration: .1, ease: 'power3'});
-        const rx = gsap.quickTo(ring, 'x', {duration: .5, ease: 'power3'}), ry = gsap.quickTo(ring, 'y', {duration: .5, ease: 'power3'});
-        window.addEventListener('mousemove', e => {dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);});
+        const dx = gsap.quickTo(dot, 'x', { duration: .1, ease: 'power3' }), dy = gsap.quickTo(dot, 'y', { duration: .1, ease: 'power3' });
+        const rx = gsap.quickTo(ring, 'x', { duration: .5, ease: 'power3' }), ry = gsap.quickTo(ring, 'y', { duration: .5, ease: 'power3' });
+        window.addEventListener('mousemove', e => { dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
         const sel = 'a, button, .tag, .chip, .m-item, .svc-media, .browser, input, textarea';
-        document.addEventListener('mouseover', e => {if (e.target.closest(sel)) ring.classList.add('is-hover');});
-        document.addEventListener('mouseout', e => {if (e.target.closest(sel)) ring.classList.remove('is-hover');});
+        document.addEventListener('mouseover', e => { if (e.target.closest(sel)) ring.classList.add('is-hover'); });
+        document.addEventListener('mouseout', e => { if (e.target.closest(sel)) ring.classList.remove('is-hover'); });
       }
 
       /* ---- magnetic buttons ---- */
       function initMagnetic() {
         if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches || reduce || !hasGSAP) return;
         $$('[data-magnetic]').forEach(el => {
-          const xTo = gsap.quickTo(el, 'x', {duration: .5, ease: 'power3'}), yTo = gsap.quickTo(el, 'y', {duration: .5, ease: 'power3'});
-          el.addEventListener('mousemove', e => {const r = el.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * .3); yTo((e.clientY - r.top - r.height / 2) * .35);});
-          el.addEventListener('mouseleave', () => {xTo(0); yTo(0);});
+          const xTo = gsap.quickTo(el, 'x', { duration: .5, ease: 'power3' }), yTo = gsap.quickTo(el, 'y', { duration: .5, ease: 'power3' });
+          el.addEventListener('mousemove', e => { const r = el.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * .3); yTo((e.clientY - r.top - r.height / 2) * .35); });
+          el.addEventListener('mouseleave', () => { xTo(0); yTo(0); });
         });
       }
 
@@ -958,14 +959,14 @@
         if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches || reduce || !hasGSAP) return;
         $$('.svc-media').forEach(box => {
           const img = $('img', box);
-          const xTo = gsap.quickTo(img, 'x', {duration: .8, ease: 'power3'}), yTo = gsap.quickTo(img, 'y', {duration: .8, ease: 'power3'});
-          box.addEventListener('mousemove', e => {const r = box.getBoundingClientRect(); xTo(((e.clientX - r.left) / r.width - .5) * -34); yTo(((e.clientY - r.top) / r.height - .5) * -26);});
-          box.addEventListener('mouseleave', () => {xTo(0); yTo(0);});
+          const xTo = gsap.quickTo(img, 'x', { duration: .8, ease: 'power3' }), yTo = gsap.quickTo(img, 'y', { duration: .8, ease: 'power3' });
+          box.addEventListener('mousemove', e => { const r = box.getBoundingClientRect(); xTo(((e.clientX - r.left) / r.width - .5) * -34); yTo(((e.clientY - r.top) / r.height - .5) * -26); });
+          box.addEventListener('mouseleave', () => { xTo(0); yTo(0); });
         });
         // hero portrait follows the mouse very slightly
         const hero = $('.hero'), port = $('.hero-portrait-in');
         if (hero && port && window.innerWidth >= 1100) {
-          const px = gsap.quickTo(port, 'x', {duration: 1.2, ease: 'power3'});
+          const px = gsap.quickTo(port, 'x', { duration: 1.2, ease: 'power3' });
           hero.addEventListener('mousemove', e => px((e.clientX / window.innerWidth - .5) * 24));
         }
       }
@@ -978,19 +979,19 @@
           body.classList.toggle('menu-open', open);
           btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
           menu.inert = !open;
-          if (PF.lenis) {open ? PF.lenis.stop() : PF.lenis.start();}
+          if (PF.lenis) { open ? PF.lenis.stop() : PF.lenis.start(); }
           else body.style.overflow = open ? 'hidden' : '';
         };
         btn.addEventListener('click', () => set(!body.classList.contains('menu-open')));
-        document.addEventListener('keydown', e => {if (e.key === 'Escape' && body.classList.contains('menu-open')) set(false);});
-        PF.closeMenu = () => {if (body.classList.contains('menu-open')) set(false);};
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && body.classList.contains('menu-open')) set(false); });
+        PF.closeMenu = () => { if (body.classList.contains('menu-open')) set(false); };
       }
 
       /* ---- resume download ---- */
       function initResume() {
         $$('[data-resume]').forEach(b => b.addEventListener('click', () => {
           const a = document.createElement('a');
-          if (CONFIG.resumeUrl) {a.href = CONFIG.resumeUrl; a.download = ''; a.target = '_blank'; a.rel = 'noopener';}
+          if (CONFIG.resumeUrl) { a.href = CONFIG.resumeUrl; a.download = ''; a.target = '_blank'; a.rel = 'noopener'; }
           else {
             const text = [
               CONFIG.name.toUpperCase() + ' — FULL-STACK / FRONTEND DEVELOPER', CONFIG.location + ' · ' + CONFIG.email, '',
@@ -1000,14 +1001,14 @@
               'EDUCATION', 'B.Tech, Computer Science (2023 - 2027)', '',
               '(Placeholder resume — set CONFIG.resumeUrl in index.html to serve your real PDF.)'
             ].join('\n');
-            a.href = URL.createObjectURL(new Blob([text], {type: 'text/plain'})); a.download = CONFIG.name.replace(/\s+/g, '-') + '-Resume.txt';
+            a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' })); a.download = CONFIG.name.replace(/\s+/g, '-') + '-Resume.txt';
           }
           document.body.appendChild(a); a.click(); a.remove();
         }));
       }
 
       /* ---- back to top ---- */
-      function initToTop() {$('#toTop').addEventListener('click', () => PF.scrollTo(0));}
+      function initToTop() { $('#toTop').addEventListener('click', () => PF.scrollTo(0)); }
 
       /* ---- contact form: validation + honest submission ---- */
       function initForm() {
@@ -1017,32 +1018,32 @@
           email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Please enter a valid email address.',
           message: v => v.trim().length >= 10 ? '' : 'Your message should be at least 10 characters.'
         };
-        const ids = {name: 'cf-name', email: 'cf-email', message: 'cf-msg'};
+        const ids = { name: 'cf-name', email: 'cf-email', message: 'cf-msg' };
         const check = key => {
           const input = $('#' + ids[key]), msg = rules[key](input.value), field = input.closest('.field');
           field.dataset.invalid = msg ? 'true' : 'false'; input.setAttribute('aria-invalid', !!msg);
           input.setAttribute('aria-describedby', ids[key] + '-err'); $('#' + ids[key] + '-err').textContent = msg;
           return !msg;
         };
-        Object.keys(ids).forEach(k => {const i = $('#' + ids[k]); i.addEventListener('blur', () => check(k)); i.addEventListener('input', () => {if (i.closest('.field').dataset.invalid === 'true') check(k);});});
+        Object.keys(ids).forEach(k => { const i = $('#' + ids[k]); i.addEventListener('blur', () => check(k)); i.addEventListener('input', () => { if (i.closest('.field').dataset.invalid === 'true') check(k); }); });
 
-        const say = (t, cls) => {status.textContent = t; status.className = 'form-status ' + (cls || '');};
+        const say = (t, cls) => { status.textContent = t; status.className = 'form-status ' + (cls || ''); };
 
         form.addEventListener('submit', async e => {
           e.preventDefault(); say('');
           const valid = Object.keys(ids).map(check).every(Boolean);
-          if (!valid) {const bad = $('.field[data-invalid="true"] input, .field[data-invalid="true"] textarea', form); if (bad) bad.focus(); return;}
+          if (!valid) { const bad = $('.field[data-invalid="true"] input, .field[data-invalid="true"] textarea', form); if (bad) bad.focus(); return; }
           if (form.company.value) return;             // honeypot: silently drop bots
 
-          const data = {name: form.name.value.trim(), email: form.email.value.trim(), message: form.message.value.trim()};
+          const data = { name: form.name.value.trim(), email: form.email.value.trim(), message: form.message.value.trim() };
 
           if (CONFIG.formEndpoint) {
             btn.disabled = true; say('Sending…');
             try {
-              const res = await fetch(CONFIG.formEndpoint, {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(data)});
+              const res = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) });
               if (!res.ok) throw new Error('HTTP ' + res.status);
               say('Thanks — your message has been sent. I will reply soon.', 'ok'); form.reset();
-            } catch (err) {say('Something went wrong sending your message. Please email me directly at ' + CONFIG.email + '.', 'bad');}
+            } catch (err) { say('Something went wrong sending your message. Please email me directly at ' + CONFIG.email + '.', 'bad'); }
             btn.disabled = false;
           } else {
             // No backend configured: be transparent and fall back to the visitor's email client.
@@ -1059,18 +1060,18 @@
         const host = $('#contactCanvas');
         if (!host || !window.THREE || reduce || window.innerWidth < 768) return;
         let renderer;
-        try {renderer = new THREE.WebGLRenderer({alpha: true, antialias: true, powerPreference: 'low-power'});} catch (e) {return;}
+        try { renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' }); } catch (e) { return; }
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
         host.appendChild(renderer.domElement);
 
         const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(45, 1, .1, 50); camera.position.z = 6;
         const group = new THREE.Group(); scene.add(group);
-        const outer = new THREE.Mesh(new THREE.IcosahedronGeometry(1.9, 1), new THREE.MeshBasicMaterial({color: 0xFF4B16, wireframe: true, transparent: true, opacity: .26}));
-        const inner = new THREE.Mesh(new THREE.IcosahedronGeometry(1.0, 0), new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true, transparent: true, opacity: .16}));
+        const outer = new THREE.Mesh(new THREE.IcosahedronGeometry(1.9, 1), new THREE.MeshBasicMaterial({ color: 0xFF4B16, wireframe: true, transparent: true, opacity: .26 }));
+        const inner = new THREE.Mesh(new THREE.IcosahedronGeometry(1.0, 0), new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: .16 }));
         group.add(outer, inner);
-        const pts = []; for (let i = 0; i < 220; i++) {const v = new THREE.Vector3().randomDirection ? new THREE.Vector3().randomDirection() : new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).normalize(); v.multiplyScalar(2.8 + Math.random() * .9); pts.push(v);}
+        const pts = []; for (let i = 0; i < 220; i++) { const v = new THREE.Vector3().randomDirection ? new THREE.Vector3().randomDirection() : new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).normalize(); v.multiplyScalar(2.8 + Math.random() * .9); pts.push(v); }
         const pg = new THREE.BufferGeometry().setFromPoints(pts);
-        group.add(new THREE.Points(pg, new THREE.PointsMaterial({color: 0xffffff, size: .025, transparent: true, opacity: .55})));
+        group.add(new THREE.Points(pg, new THREE.PointsMaterial({ color: 0xffffff, size: .025, transparent: true, opacity: .55 })));
 
         const resize = () => {
           const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return;
@@ -1079,8 +1080,8 @@
         };
         resize(); window.addEventListener('resize', resize);
 
-        const mouse = {x: 0, y: 0}; window.addEventListener('mousemove', e => {mouse.x = e.clientX / innerWidth - .5; mouse.y = e.clientY / innerHeight - .5;});
-        let visible = false; new IntersectionObserver(en => {visible = en[0].isIntersecting;}, {threshold: 0}).observe(host);
+        const mouse = { x: 0, y: 0 }; window.addEventListener('mousemove', e => { mouse.x = e.clientX / innerWidth - .5; mouse.y = e.clientY / innerHeight - .5; });
+        let visible = false; new IntersectionObserver(en => { visible = en[0].isIntersecting; }, { threshold: 0 }).observe(host);
         const clock = new THREE.Clock();
         (function loop() {
           requestAnimationFrame(loop);
