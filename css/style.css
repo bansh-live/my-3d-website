@@ -258,6 +258,47 @@
     /* =========================================================
    4. PRELOADER
    ========================================================= */
+
+
+/* BANSH Preloader Logo */
+.pl-logo {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pl-logo-img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  position: relative;
+  z-index: 3;
+  filter: drop-shadow(0 0 12px rgba(183, 255, 60, 0.15));
+}
+
+/* Existing orbital rings */
+.pl-logo .ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: logoOrbit 8s linear infinite;
+}
+
+.pl-logo .r2 {
+  animation-direction: reverse;
+  animation-duration: 12s;
+}
+
+@keyframes logoOrbit {
+  to { transform: rotate(360deg); }
+}
+
+
+
     #preloader {
       position: fixed;
       inset: 0;
@@ -415,6 +456,40 @@
     /* =========================================================
    5. HEADER / NAVIGATION
    ========================================================= */
+
+
+
+
+/* BANSH Navbar Logo */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  width: 145px;
+  height: 55px;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  transition: transform 0.35s ease;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
     .nav {
       --fg: #080808;
       --inv: #F7F7F5;

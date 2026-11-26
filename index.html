@@ -78,14 +78,7 @@
     </div>
     <div class="pl-center">
       <div class="pl-logo">
-        <svg class="ring" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="48" stroke="rgba(255,255,255,.25)" stroke-width=".6" stroke-dasharray="1.5 3.5" />
-          <circle cx="50" cy="3" r="2" fill="#FF4B16" />
-        </svg>
-        <svg class="ring r2" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="48" stroke="#fff" stroke-width=".6" stroke-dasharray="30 12" />
-        </svg>
-        <b>B<i>K</i></b>
+        <img src="images/bansh-logo.png" alt="BANSH Logo" class="pl-logo-img">
       </div>
       <div class="pl-text" id="plText" aria-hidden="true"></div>
     </div>
@@ -99,10 +92,9 @@
   <!-- ===================== HEADER ===================== -->
   <header class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#home" class="brand" aria-label="Alex Morgan — home">
-        <span class="mono">B<i>K</i></span>
-        <span class="name">BANSH</span>
-      </a>
+        <a href="#home" class="brand" aria-label="BANSH — home">
+    <img src="images/bansh-logo.png" alt="BANSH Logo" class="brand-logo">
+  </a>
       <ul class="nav-socials" aria-label="Social links">
         <li><a class="icon-btn" data-social="github" href="https://https://github.com/bansh-live"
             rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a></li>
@@ -156,7 +148,8 @@
 
       <div class="hero-portrait" data-hero-parallax="50">
         <div class="hero-portrait-in" data-portrait-wrap>
-          <img class="portrait" src="images/Beige Jacket Portrait Cutout-Photoroom.png" alt="BANSH - Creative Developer" />
+          <img class="portrait" src="images/Beige Jacket Portrait Cutout-Photoroom.png"
+            alt="BANSH - Creative Developer" />
         </div>
       </div>
 
@@ -987,15 +980,15 @@
       }
 
 
-      
-/* ---- resume download ---- */
-function initResume() {
-  $$('[data-resume]').forEach(b => {
-    b.addEventListener('click', () => {
-      window.open('./resume.pdf', '_blank');
-    });
-  });
-}
+
+      /* ---- resume download ---- */
+      function initResume() {
+        $$('[data-resume]').forEach(b => {
+          b.addEventListener('click', () => {
+            window.open('./resume.pdf', '_blank');
+          });
+        });
+      }
 
       /* ---- back to top ---- */
       function initToTop() { $('#toTop').addEventListener('click', () => PF.scrollTo(0)); }
