@@ -835,8 +835,8 @@
 
     40% {
         transform: scale(1.13) rotate(-7deg);
-        color: #ff4b16;
-        filter: drop-shadow(0 0 15px #ff4b16);
+        color: #b7ff3c;
+        filter: drop-shadow(0 0 15px #b7ff3c);
     }
 
     55% {
@@ -845,7 +845,7 @@
 
     70% {
         transform: scale(1.06) rotate(0);
-        filter: drop-shadow(0 0 25px #ff4b16);
+        filter: drop-shadow(0 0 25px #b7ff3c);
     }
 }
 
