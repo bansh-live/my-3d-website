@@ -806,14 +806,14 @@
 
       35% {
         transform: translateY(-9px) skewY(-5deg) scale(1.04);
-        color: #b7ff3c;
+        color: #000;
         filter: drop-shadow(0 0 12px #b7ff3c);
       }
 
       65% {
         transform: translateY(3px) skewY(4deg) scale(.98);
         color: #ffffff;
-        filter: drop-shadow(0 0 20px rgba(183, 255, 60, .7));
+        filter: drop-shadow(0 0 20px rgba(18, 20, 14, 0.7));
       }
     }
 
@@ -834,8 +834,8 @@
 
       40% {
         transform: scale(1.13) rotate(-7deg);
-        color: #b7ff3c;
-        filter: drop-shadow(0 0 15px #b7ff3c);
+        color: #000;
+        filter: drop-shadow(0 0 15px #000);
       }
 
       55% {
@@ -844,7 +844,7 @@
 
       70% {
         transform: scale(1.06) rotate(0);
-        filter: drop-shadow(0 0 25px #b7ff3c);
+        filter: drop-shadow(0 0 25px #000);
       }
     }
 
