@@ -775,84 +775,65 @@
    NEON LIQUID ENERGY LETTER EFFECT
 ================================= */
 
-    .hero-title .energy-e,
-    .hero-title .energy-p {
-      display: inline-block;
+    .developer-text {
       position: relative;
-      transform-origin: center;
-      will-change: transform, filter;
+      display: inline-block;
+      font-size: clamp(65px, 12vw, 160px);
+      font-weight: 900;
+      letter-spacing: -8px;
+      line-height: 1;
+
+      background: linear-gradient(110deg,
+          #ff4b16 0%,
+          #ff9a72 20%,
+          #ff4b16 40%,
+          #ffcfb8 50%,
+          #000 65%,
+          #000 85%,
+          #000 100%);
+
+      background-size: 250% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation:
+        orangeFlow 5s linear infinite,
+        orangeGlow 3s ease-in-out infinite alternate;
+
+      filter: drop-shadow(0 0 15px rgba(255, 75, 22, 0.25));
     }
 
-    /* E - Liquid Energy */
-    .energy-e {
-      animation: liquidEnergy 3s ease-in-out infinite;
+    .developer-text span {
+      -webkit-text-fill-color: #ff4b16;
+      animation: dotPulse 1.2s ease-in-out infinite alternate;
     }
 
-    .energy-e:nth-of-type(2) {
-      animation-delay: .7s;
-    }
-
-    .energy-e:nth-of-type(3) {
-      animation-delay: 1.4s;
-    }
-
-    @keyframes liquidEnergy {
-
-      0%,
-      100% {
-        transform: translateY(0) skewY(0deg) scale(1);
-        filter: drop-shadow(0 0 0 transparent);
-      }
-
-      35% {
-        transform: translateY(-9px) skewY(-5deg) scale(1.04);
-        color: #000;
-        filter: drop-shadow(0 0 12px #b7ff3c);
-      }
-
-      65% {
-        transform: translateY(3px) skewY(4deg) scale(.98);
-        color: #ffffff;
-        filter: drop-shadow(0 0 20px rgba(178, 236, 60, 0.7));
-      }
-    }
-
-    /* P - Electric Pulse */
-    .energy-p {
-      animation: electricPulse 3.5s ease-in-out infinite;
-      animation-delay: .4s;
-    }
-
-    @keyframes electricPulse {
-
-      0%,
-      100% {
-        transform: scale(1) rotate(0);
-        color: inherit;
-        filter: none;
-      }
-
-      40% {
-        transform: scale(1.13) rotate(-7deg);
-        color: #000;
-        filter: drop-shadow(0 0 15px #c4b7b7);
-      }
-
-      55% {
-        transform: scale(.94) rotate(5deg);
-      }
-
-      70% {
-        transform: scale(1.06) rotate(0);
-        filter: drop-shadow(0 0 25px #c94747);
+    @keyframes orangeFlow {
+      to {
+        background-position: 250% center;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
+    @keyframes orangeGlow {
+      from {
+        filter: drop-shadow(0 0 5px rgba(255, 75, 22, 0.2));
+      }
 
-      .energy-e,
-      .energy-p {
-        animation: none;
+      to {
+        filter: drop-shadow(0 0 25px rgba(255, 75, 22, 0.65));
+      }
+    }
+
+    @keyframes dotPulse {
+      from {
+        opacity: 0.5;
+        text-shadow: 0 0 5px #ff4b16;
+      }
+
+      to {
+        opacity: 1;
+        text-shadow: 0 0 25px #ff4b16;
       }
     }
 
