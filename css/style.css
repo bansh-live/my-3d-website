@@ -260,42 +260,44 @@
    ========================================================= */
 
 
-/* BANSH Preloader Logo */
-.pl-logo {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    /* BANSH Preloader Logo */
+    .pl-logo {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.pl-logo-img {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  position: relative;
-  z-index: 3;
-  filter: drop-shadow(0 0 12px rgba(183, 255, 60, 0.15));
-}
+    .pl-logo-img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      position: relative;
+      z-index: 3;
+      filter: drop-shadow(0 0 12px rgba(183, 255, 60, 0.15));
+    }
 
-/* Existing orbital rings */
-.pl-logo .ring {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  animation: logoOrbit 8s linear infinite;
-}
+    /* Existing orbital rings */
+    .pl-logo .ring {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      animation: logoOrbit 8s linear infinite;
+    }
 
-.pl-logo .r2 {
-  animation-direction: reverse;
-  animation-duration: 12s;
-}
+    .pl-logo .r2 {
+      animation-direction: reverse;
+      animation-duration: 12s;
+    }
 
-@keyframes logoOrbit {
-  to { transform: rotate(360deg); }
-}
+    @keyframes logoOrbit {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
 
 
@@ -456,38 +458,6 @@
     /* =========================================================
    5. HEADER / NAVIGATION
    ========================================================= */
-
-
-
-
-/* BANSH Navbar Logo */
-.brand {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  width: 145px;
-  height: 55px;
-}
-
-.brand-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: left center;
-  transition: transform 0.35s ease;
-}
-
-.brand:hover .brand-logo {
-  transform: scale(1.05);
-}
-
-
-
-
-
-
-
-
 
 
     .nav {
@@ -776,87 +746,54 @@
    6. HERO
    ========================================================= */
 
-/* =================================
-   NEON LIQUID ENERGY LETTER EFFECT
-================================= */
-
-.hero-title .energy-e,
-.hero-title .energy-p {
-    display: inline-block;
-    position: relative;
-    transform-origin: center;
-    will-change: transform, filter;
-}
-
-/* E - Liquid Energy */
-.energy-e {
-    animation: liquidEnergy 3s ease-in-out infinite;
-}
-
-.energy-e:nth-of-type(2) {
-    animation-delay: .7s;
-}
-
-.energy-e:nth-of-type(3) {
-    animation-delay: 1.4s;
-}
-
-@keyframes liquidEnergy {
-    0%, 100% {
-        transform: translateY(0) skewY(0deg) scale(1);
-        filter: drop-shadow(0 0 0 transparent);
+    .developer-title .loop-e,
+    .developer-title .loop-p {
+      display: inline-block;
+      transform-origin: center;
+      will-change: transform, color;
     }
 
-    35% {
-        transform: translateY(-9px) skewY(-5deg) scale(1.04);
-        color: #b7ff3c;
-        filter: drop-shadow(0 0 12px #b7ff3c);
+    .developer-title .loop-e {
+      animation: eMotion 3s ease-in-out infinite;
     }
 
-    65% {
-        transform: translateY(3px) skewY(4deg) scale(.98);
-        color: #ffffff;
-        filter: drop-shadow(0 0 20px rgba(183,255,60,.7));
+    .developer-title .loop-p {
+      animation: pMotion 3s ease-in-out infinite;
+      animation-delay: 1s;
     }
-}
 
-/* P - Electric Pulse */
-.energy-p {
-    animation: electricPulse 3.5s ease-in-out infinite;
-    animation-delay: .4s;
-}
+    @keyframes eMotion {
 
-@keyframes electricPulse {
-    0%, 100% {
-        transform: scale(1) rotate(0);
+      0%,
+      100% {
+        transform: translateY(0) rotateY(0deg);
         color: inherit;
-        filter: none;
-    }
+        text-shadow: none;
+      }
 
-    40% {
-        transform: scale(1.13) rotate(-7deg);
+      50% {
+        transform: translateY(-12px) rotateY(180deg);
         color: #b7ff3c;
-        filter: drop-shadow(0 0 15px #b7ff3c);
+        text-shadow: 0 0 20px rgba(183, 255, 60, .5);
+      }
     }
 
-    55% {
-        transform: scale(.94) rotate(5deg);
+    @keyframes pMotion {
+
+      0%,
+      100% {
+        transform: translateY(0) rotateX(0deg);
+        color: inherit;
+      }
+
+      50% {
+        transform: translateY(-15px) rotateX(360deg);
+        color: #b7ff3c;
+        text-shadow: 0 0 20px rgba(183, 255, 60, .5);
+      }
     }
 
-    70% {
-        transform: scale(1.06) rotate(0);
-        filter: drop-shadow(0 0 25px #b7ff3c);
-    }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    .energy-e,
-    .energy-p {
-        animation: none;
-    }
-}
-
-   
     .hero {
       position: relative;
       background: var(--white);
