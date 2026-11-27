@@ -928,7 +928,7 @@
       z-index: 4;
       width: calc(100% - 2*var(--pad));
       max-width: 520px;
-      margin-top: 20px
+      margin-top: 95px !important;
     }
 
     .hero-left .hc-in {
@@ -1019,7 +1019,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-top: 12px
+      margin-top: 110px !important;
     }
 
     .hero-stats .num {
