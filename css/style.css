@@ -460,6 +460,27 @@
    ========================================================= */
 
 
+    /* BANSH Navbar Logo */
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      width: 145px;
+      height: 55px;
+    }
+
+    .brand-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: left center;
+      transition: transform 0.35s ease;
+    }
+
+    .brand:hover .brand-logo {
+      transform: scale(1.05);
+    }
+
     .nav {
       --fg: #080808;
       --inv: #F7F7F5;
